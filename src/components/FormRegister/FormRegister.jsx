@@ -1,7 +1,7 @@
 import './FormRegister.css';
 import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 import { userContext } from '../../context/UserContext';
 import { registerUser } from '../../utils/Api/Register';
@@ -51,27 +51,27 @@ const FormRegister = () => {
       <h2>Regístrate</h2>
       <form onSubmit={handleSubmit(onSubmit)} encType="multipart/form-data">
         <div>
-          <label>Email</label>
           <input
             type="email"
+            placeholder='Email'
             {...register("email", { required: "Email es requerido" })}
           />
           {errors.email && <p>{errors.email.message}</p>}
         </div>
 
         <div>
-          <label>Nombre</label>
           <input
             type="text"
+            placeholder='Nombre'
             {...register("name", { required: "Nombre es requerido" })}
           />
           {errors.name && <p>{errors.name.message}</p>}
         </div>
 
         <div>
-          <label>Password</label>
           <input
             type="password"
+            placeholder='Contraseña'
             {...register("password", {
               required: "Password es requerido",
               minLength: {
@@ -84,7 +84,6 @@ const FormRegister = () => {
         </div>
 
         <div>
-          <label>Avatar (Foto de Perfil)</label>
           <input
             type="file"
             accept="image/*"
@@ -92,7 +91,11 @@ const FormRegister = () => {
           />
         </div>
 
-        <button type="submit">Registrarse</button>
+        <button type="submit">Sign In</button>
+        <div className="separador"></div>
+      <NavLink className={"toregister"} to={"/profile"}>
+        Log In
+      </NavLink>
       </form>
     </main>
   );

@@ -41,19 +41,22 @@ const FormLogin = () => {
 
   return (
     <main className="mainlogin">
-      <h2>Inicia sesión</h2>
+      
       <form onSubmit={handleSubmit(submit)}>
+      <h2>Inicia sesión</h2>
         <div>
-          <label>Email</label>
           <input
             type="email"
+            placeholder="email"
             {...register("email", { required: "Email es requerido" })}
           />
+                    {errors.email && <p className="error">{errors.email.message}</p>}
+
         </div>
         <div>
-          <label>Password</label>
           <input
             type="password"
+            placeholder="contraseña"
             {...register("password", {
               required: "Password es requerido",
               minLength: {
@@ -62,14 +65,16 @@ const FormLogin = () => {
               },
             })}
           />
+                    {errors.password && <p className="error">{errors.password.message}</p>}
+
         </div>
-        <button type="submit">Enviar</button>
-      </form>
-      <div className="separador"></div>
-      <h3>¿No tienes cuenta?</h3>
+        <button type="submit">Log In</button>
+        <div className="separador"></div>
       <NavLink className={"toregister"} to={"/register"}>
-        Registrate
+        Sign In
       </NavLink>
+      </form>
+      
     </main>
   );
 };
