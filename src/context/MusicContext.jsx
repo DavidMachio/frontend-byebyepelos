@@ -19,8 +19,11 @@ export const MusicProvider = ({ children }) => {
     songs: null,
   });
 
+  //http://localhost:3000/api/v1/albums
+  //https://backend-byebyepelos.vercel.app/api/v1/albums
+
   useEffect(() => {
-    fetch("http://localhost:3000/api/v1/albums")
+    fetch("https://backend-byebyepelos.vercel.app/api/v1/albums")
       .then((res) => res.json())
       .then((res) => {
         setAlbums(res);

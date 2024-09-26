@@ -43,9 +43,11 @@ const Profile = () => {
     setPlayListAlbum
   } = useMusicContext();
 
+  //http://localhost:3000/api/v1
+  //https://backend-byebyepelos.vercel.app/api/v1
   useEffect(() => {
     if (user) {
-      fetch(`http://localhost:3000/api/v1/users/${user.name}`)
+      fetch(`https://backend-byebyepelos.vercel.app/api/v1/users/${user.name}`)
         .then((res) => res.json())
         .then((res) => {
           console.log(res[0]);
