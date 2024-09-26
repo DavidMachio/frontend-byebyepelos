@@ -1,0 +1,31 @@
+.musico{
+    background-color: rgb(39, 39, 39);
+    padding: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.musicianimg{
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.463);
+}
+.infomusico{
+    display: flex;
+    gap: 5px;
+}
+
+.infomusico h3{
+    color: rgb(255, 255, 255);
+}
+
+@media (max-width:1050px){
+    .musico{
+        flex-direction: column;
+        width: 80%;
+    }
+}

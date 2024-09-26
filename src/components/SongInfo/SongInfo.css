@@ -1,0 +1,210 @@
+.componenteSongInfo{
+    -webkit-animation:fade-in 5.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both
+}
+.songinfo_reproductor_container{
+    position: relative;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    overflow: hidden;
+}
+.songinfo{
+    text-align: center;
+}
+.songinfo_titulocancion{
+    font-size: 20px;
+    padding: 0 10px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.519);
+    color: green;
+}
+.songinfo_vso {
+    font-size: 16px;
+    font-weight: 100;
+    padding: 0 10px;
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.519);
+}
+
+.songinfo_portadacancion{
+    height: 250px;
+    width: 250px;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.519);
+}
+
+.songinfo_controls_container{
+    height: 150px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.songinfo_time_container{
+    width: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+.songinfo_currentTime {
+    width: 60px;
+    text-align: left;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+.songinfo_duration{
+    width: 70px;
+    text-align: right;
+    font-weight: 100;
+    letter-spacing: 1px;
+}
+.songinfo_controls_buttons{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.songinfo_button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.443);
+    border: 2px solid green;
+}
+.songinfo_prev_button, 
+.songinfo_next_button{
+    background-color: rgba(0, 0, 0, 0.216);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.349);
+    height: 45px;
+
+}
+.songinfo_play_button{
+    background-color: white;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+
+}
+.img_button_play{
+    height: 25px;
+}
+.img_button_next, .img_button_back{
+    height: 20px;
+    filter: invert(1);
+}
+
+.songinfo_verinfo{
+    display: none;
+    
+}
+
+.songinfo_fotocancion_fondo{
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    opacity: 30%;
+    filter: blur(10px);
+}
+.musicosContainer{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+    width: 100%;
+    height: 100%;
+    transition: all .3s ease-in-out;
+}
+.musicosContainer_infosong{
+    display: none;
+}
+
+
+.songinfo_cerrarinfo {
+    display: none;
+}
+
+@keyframes aparecer{
+    from{
+        opacity: 0%;
+    }
+    to{
+        opacity: 100%;
+    }
+}
+@-webkit-keyframes fade-in{0%{opacity:0}100%{opacity:1}}@keyframes fade-in{0%{opacity:0}100%{opacity:1}}
+
+@media (max-width:1050px){
+    .componenteSongInfo{
+        width: 100%;
+    }
+    .musicosContainer_infosong{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    
+    .songinfo_cerrarinfo{
+        color: white;
+        background-color: transparent;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        border: none;
+        font-size: 20px;
+        align-self: center;
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+    }
+    .musicosContainer{
+        overflow: hidden;
+        align-items: center;
+        position: absolute;
+        bottom: 0px;
+        left: 0;
+        right: 0;
+        margin: auto;
+        background-color: rgba(0, 0, 0, 0.917);
+        justify-content: center;
+        
+    }
+    .infooculta{
+        height: 0px;
+        padding: 0px;
+        opacity: 0%;
+    }
+    .songinfo_reproductor_container{
+        height: calc(100svh - 160px);
+    }
+    .songinfo_verinfo{
+        display: inline;
+        background-color: transparent;
+    border: 2px solid white;
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all .3s;
+    color: white;
+    }
+    .songinfo_verinfo:hover{
+color: black;        background-color: white;
+    }
+    
+}
+

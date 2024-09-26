@@ -1,0 +1,87 @@
+#song{
+    -webkit-animation:fade-in 5.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both;
+    position: relative;
+    height: 80px;
+    width: 100%;
+    padding: 10px 50px 10px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    transition: all .3s;
+    cursor: pointer;
+}
+#song:hover {
+    background-color: rgb(50, 50, 50);
+    border: none;
+    border-radius: 10px;
+}
+.containersong {
+    height: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.song_number{
+    width: 22px;
+}
+#song img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+#song h2, h3 {
+    font-size: 16px;
+    font-weight: 100;
+    
+}
+.song_info{
+    text-align: left;
+}
+.song_vsosong{
+    font-size: 12px;
+    font-weight: 100;
+    margin-right: 15px;
+}
+
+.addsongList {
+    background-color: transparent;
+    border: 1px solid;
+    height: 20px;
+    width: 20px;
+    border-radius: 100%;
+    font-size: 12px;
+    font-weight: 100;
+    position: absolute;
+    z-index: 1000;
+    right: 95px;
+    top: 5px;
+    bottom: 5px;
+    margin: auto;
+
+
+}
+.addsongList:hover {
+    background-color: green;
+}
+.divlevels{
+    position: absolute;
+    right: 10px;
+}
+
+.duration{
+    font-weight: 100;
+}
+.reproduciendo{
+    background-color: rgb(20, 36, 20);
+}
+
+@media (max-width:550px){
+    #song h2, h3 {
+        font-size: 12px;
+        font-weight: 100;
+        
+    }
+}
+

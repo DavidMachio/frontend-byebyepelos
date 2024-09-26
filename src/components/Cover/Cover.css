@@ -1,0 +1,43 @@
+#cover{
+    -webkit-animation:fade-in 5.2s cubic-bezier(.39,.575,.565,1.000) both;animation:fade-in 1.2s cubic-bezier(.39,.575,.565,1.000) both;
+    position: relative;
+    height: 330px;
+    width: 100%;
+    min-width: 200px;
+    background-color: black;
+    overflow: hidden;
+    backdrop-filter: 50px;
+}
+.foto_fondo{
+    height: 150%;
+    width: 100%;
+    position: absolute;
+    
+    z-index: -1;
+    filter: blur(15px);
+    opacity: 700%;
+}
+
+#cover img {
+    
+    height: 250px;
+    object-fit: cover;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.449);
+    position: absolute;
+    right: 30px;
+    top: 10px;
+    bottom: 10px;
+    margin: auto;
+}
+#info-cover {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+}
+.titlecover{
+    max-width: 400px;
+    font-size: 50px;
+    font-weight: 600;
+    text-shadow: 0 0 20px black;
+    line-height: 70px;
+}

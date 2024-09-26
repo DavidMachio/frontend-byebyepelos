@@ -1,0 +1,156 @@
+#main-music{
+    height: calc(100svh - 60px);
+    width: 100%;
+    padding: 10px;
+    display: flex;
+    gap: 10px;
+}
+.left-container {
+    width: 100%;
+    overflow-y: scroll;
+    border-radius: 10px;
+}
+::-webkit-scrollbar{
+    display: none;
+}
+.right-container {
+    width: 30%;
+    min-width: 300px;
+    border-radius: 10px;
+    overflow-y: scroll;
+    background-color: rgb(18, 18, 18);
+
+}
+
+
+#albums-container{
+    height: 100%;
+    width: 350px;
+    min-width: 250px;
+    background-color: rgb(18, 18, 18);
+    padding: 10px;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+#albums-container > h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#albums-container ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+#section-songs{
+    min-height: 100%;
+    width: 100%;
+    min-width: 200px;
+    max-width: 100%;
+    background-color: rgb(17, 17, 17);
+    border-radius: 10px;
+    padding-bottom: 30px;
+}
+.ulsongs{
+    padding: 10px 10px 20px 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    
+}
+.lisong{
+    position: relative;
+    view-timeline-name: --reveal;
+    animation-name: show;
+    animation-fill-mode: both;
+    animation-timeline: --reveal;
+    animation-range: entry 15% cover 15%
+
+}
+
+.vacio{
+    position: absolute;
+    bottom: 0;
+}
+.barrareproduciendo{
+    display: none;
+    background-color: black;
+}
+
+
+@media (max-width:1050px){
+    #main-music{
+        height: calc(100svh - 160px);
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+    .barrareproduciendo{
+        width: 100%;
+    height: 100px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+        display: flex;
+    }
+    .right-container{
+        display: none;
+        border-radius: 0;
+    }
+    .mostrarplayer{
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: calc(100svh - 160px);
+    }
+    #albums-container{
+        width: 100%;
+        height: 200px;
+        background-color: transparent;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0;
+    }
+    #albums-container h2 {
+        display: none;
+    }
+    #albums-container ul{
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100%;
+        height: 100%;
+        max-height: 150px;
+        padding: 0px;
+        overflow: scroll;
+    }
+    #albums-container li{
+        height: 100%;
+        width: 100px;
+        min-width: 100px;
+        padding: 0;
+    }
+    #albums-container li img{
+        height: 100%;
+        max-height: 150px;
+
+        width: 100%;
+        padding: 0;
+    }
+}
+
+
+@keyframes show {
+    from {
+        opacity: 0; scale: 60%;
+    }
+    to {
+        opacity: 1; scale: 100%;
+    }
+}

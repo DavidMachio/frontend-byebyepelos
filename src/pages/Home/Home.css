@@ -1,0 +1,70 @@
+.mainhome {
+    padding: 10px;
+    min-height: 100%;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.mainhome h1 {
+    font-size: 50px;
+}
+
+.portada{
+    background-image: url('https://res.cloudinary.com/drmbhl3f6/image/upload/v1725276424/DSCF6591_hffvq1.jpg');
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    aspect-ratio: 1/0.4;
+    border-radius: 20px;
+}
+.mainhome article {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+.mainhome > img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+.mainhome article img {
+    max-width: 500px;
+    min-width: 300px;
+    border-radius: 10px;
+}
+.mainhome h4 {
+    max-width: 700px;
+    min-width: 300px;
+
+}
+.footer{
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    margin-bottom: 100px;
+}
+
+.cancionActual{
+    height: 100px;
+    width: 100%;
+    background-color: black;
+    position: fixed;
+    bottom: 0;
+}
+.navtomusic{
+    cursor: pointer;
+}
+.oculto{
+    display: none;
+}
+.levelsContainer {
+    margin-right: 20px;
+}

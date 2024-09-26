@@ -1,0 +1,38 @@
+
+.levelsbars{
+    height: 20px;
+    display: flex;
+    align-items: center;
+    gap: 1px;
+}
+.bar {
+    width: 5px;
+    border-radius: 2px;
+    background-color: green;
+}
+.oculto{
+    display: none;
+}
+
+
+.primera {
+    animation: altura .3s  .3s cubic-bezier(0.45,0.05,0.55,0.95)  alternate infinite ;
+}
+.segunda {
+    animation: altura .4s  .1s cubic-bezier(0.45,0.05,0.55,0.95)  alternate infinite ;
+}
+.tercera {
+    animation: altura .3s  .4s cubic-bezier(0.45,0.05,0.55,0.95)  alternate infinite ;
+}
+.cuarta {
+    animation: altura .5s  .2s cubic-bezier(0.45,0.05,0.55,0.95)  alternate infinite ;
+}
+
+@keyframes altura{
+    from{
+        height:1px;
+    }
+    to{
+        height:20px;
+    }
+}

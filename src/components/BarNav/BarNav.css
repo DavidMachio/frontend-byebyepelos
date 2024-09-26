@@ -1,0 +1,39 @@
+.active{
+    text-decoration: underline;
+    color: green;
+}
+#bar-nav {
+    height: 60px;
+    width: 100%;
+    background-color: rgb(21, 21, 21);
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 20px;
+    gap: 80px;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    font-size: 30px;
+    border: 2px solid rgb(128, 0, 0);
+
+    padding: 3px;
+}
+.default {
+    background-color: blanchedalmond;
+}
+.border{
+    border: 2px solid green;
+}
+#bar-nav img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+    
+}
