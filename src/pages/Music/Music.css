@@ -9,6 +9,7 @@
     width: 100%;
     overflow-y: scroll;
     border-radius: 10px;
+    
 }
 ::-webkit-scrollbar{
     display: none;
@@ -47,7 +48,7 @@
 }
 
 #section-songs{
-    min-height: 100%;
+    min-height: calc(100svh - 160px);
     width: 100%;
     min-width: 200px;
     max-width: 100%;
@@ -61,6 +62,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    
     
 }
 .lisong{
@@ -79,7 +81,25 @@
 }
 .barrareproduciendo{
     display: none;
-    background-color: black;
+}
+.confirmadd {
+    position: fixed; /* Usamos fixed para que esté siempre centrado respecto a la pantalla */
+    top: 50%;        /* Centramos el elemento verticalmente */
+    left: 50%;       /* Centramos el elemento horizontalmente */
+    transform: translate(-50%, -50%); /* Ajustamos el origen del elemento al centro */
+    width: 100%;     /* Ajusta el tamaño como sea necesario */
+    height: 100%;    /* Ajusta el tamaño como sea necesario */
+    z-index: 500;    /* Mantenemos el z-index */
+    padding: 20px;   /* Puedes ajustar el padding si es necesario */
+    background-color: rgba(0, 0, 0, 0.853); /* Asegúrate de que tenga un fondo visible */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Añadimos sombra para resaltar */
+    border-radius: 8px; /* Bordes redondeados opcionales */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.confirmoculto{
+    display: none;
 }
 
 
@@ -142,6 +162,16 @@
 
         width: 100%;
         padding: 0;
+    }
+}
+@media (max-width:550px){
+    .barrareproduciendo{
+        height: 60px;
+    }
+    #main-music{
+        min-height: calc(100svh - 100px);
+        padding: 0;
+
     }
 }
 

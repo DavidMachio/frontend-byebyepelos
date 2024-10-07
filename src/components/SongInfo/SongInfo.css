@@ -163,7 +163,9 @@
         justify-content: center;
         position: absolute;
         right: 10px;
-        top: 10px;
+        left: 10px;
+        margin: auto;
+        top: 30px;
         border: none;
         font-size: 20px;
         align-self: center;
@@ -206,5 +208,10 @@
 color: black;        background-color: white;
     }
     
+}
+@media (max-width:550px){
+    .songinfo_reproductor_container{
+        height: calc(100svh - 110px);
+    }
 }
 

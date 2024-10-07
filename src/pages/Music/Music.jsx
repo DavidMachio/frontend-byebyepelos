@@ -12,6 +12,7 @@ import {
 } from "../../utils/funtions/reproduccionCanciones";
 import { userContext } from "../../context/UserContext";
 import { API } from "../../utils/Api/Api";
+import SongAdded from "../../components/SongAdded/SongAdded";
 
 const Music = () => {
   const { user } = useContext(userContext);
@@ -35,6 +36,8 @@ const Music = () => {
     selectedAlbum,
     setSelectedAlbum,
     isLoading,
+    confirmAdd,
+    setConfirmAdd
     
   } = useMusicContext();
 
@@ -130,6 +133,11 @@ const Music = () => {
         <h2>Cargando datos...</h2>
       ) : (
         <>
+        <div className={confirmAdd ? 'confirmadd' : 'confirmoculto'}>
+                      <SongAdded
+                      addSong={() => setConfirmAdd(false)}
+                      />
+                      </div>
           <div id="albums-container">
             <h2>Albums</h2>
             <ul>
@@ -153,6 +161,7 @@ const Music = () => {
                   {disco.songs.map((song, index) => (
                     <li className="lisong" key={song._id}>
                       <Song
+                      
                         reproduciendo={
                           currentSong && currentSong._id === song._id
                             ? "reproduciendo"
@@ -169,14 +178,21 @@ const Music = () => {
                         play={() => selecCancion(song)}
                       />
                       <button
-                        onClick={()=> addToPlaylist(song._id)}
+                        onClick={() => {
+                          addToPlaylist(song._id);
+                          setConfirmAdd(true);
+                          console.log('añadida');
+                        }}
+                        
                         className={`addsongList ${!user ? "oculto" : ""}`}
                       >
                         ＋
                       </button>
+                      
                     </li>
                   ))}
                 </ul>
+                
               ) : (
                 <p>Este album no tiene canciones</p>
               )}

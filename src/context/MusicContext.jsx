@@ -13,6 +13,7 @@ export const MusicProvider = ({ children }) => {
   const [viewPlayer, setViewPlayer] = useState(false);
   const [currentSong, setCurrentSong] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
+  const [confirmAdd, setConfirmAdd] = useState(false)
   const [playListAlbum, setPlayListAlbum] = useState({
     _id: 2626262, // Un ID único para la playList
     title: 'Mi Playlist',
@@ -94,6 +95,7 @@ export const MusicProvider = ({ children }) => {
         setViewPlayer,
         playListAlbum,
         setPlayListAlbum,
+        confirmAdd, setConfirmAdd
       }}
     >
       {children}

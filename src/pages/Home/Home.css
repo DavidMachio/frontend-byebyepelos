@@ -68,3 +68,8 @@
 .levelsContainer {
     margin-right: 20px;
 }
+@media (max-width:550px){
+    .cancionActual{
+        height: 50px;
+    }
+}

@@ -8,6 +8,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
+    background-color: black;
     
   }
   
@@ -21,6 +22,8 @@
     justify-content: flex-start;
     gap: 10px;
     padding-left: 40px;
+    background-color: black;
+    text-align: left;
 
   }
   .barPlaying_container_levelsBars{
@@ -40,7 +43,8 @@
     font-size: 14px;
     color: green;
     width: auto;
-    max-width: 150px;
+    max-width: 200px;
+    margin-right: 35px;
   }
   .barplaying h3 {
     font-size: 14px;
@@ -77,8 +81,26 @@
     display: none;
   }
 
-  @media (max-width:500px){
+  @media (max-width:550px){
     .buttonsplayer .barplaying_prevsong_button{
+      display: none;
+    }
+   
+    .barplaying_info {
+      padding-left: 30px;
+    }
+    
+    .barplaying, .barplaying_info {
+      height: 50px;
+      background-color: rgb(0, 24, 0);
+    }
+    .barplaying img {
+      height: 30px;
+    }
+    .barplaying h2{
+      font-size: 12px;
+    }
+    .barplaying h3{
       display: none;
     }
   }

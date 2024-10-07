@@ -3,7 +3,7 @@ import LevelsBars from '../LevelsBars/LevelsBars';
 import './Song.css';
 import { formatDuration } from '../../utils/funtions/formatDuration';
 
-const Song = memo(({play=()=>{}, cancion, songNumber, ocultar, reproduciendo, addSong}) => {
+const Song = memo(({play=()=>{}, cancion, songNumber, ocultar, reproduciendo, confirmsongadd}) => {
     
     const [duration, setDuration] = useState(null);
 
@@ -45,6 +45,7 @@ const Song = memo(({play=()=>{}, cancion, songNumber, ocultar, reproduciendo, ad
             <div className='divlevels'>
                 <LevelsBars ocultar={ocultar} />
             </div>
+            
         </article>
     );
 })

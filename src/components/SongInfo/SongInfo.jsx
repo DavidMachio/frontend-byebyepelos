@@ -83,7 +83,7 @@ const SongInfo = ({ song, playPause, funcionPrev, funcionPlay, funcionNext}) => 
     </div>
     
     <div className={`musicosContainer ${!verinfo ? "infooculta" : ""}`}>
-      <button onClick={() => setVerinfo(!verinfo)} className="songinfo_cerrarinfo">X</button>
+      <button onClick={() => setVerinfo(!verinfo)} className="songinfo_cerrarinfo">⬇</button>
       <div className="musicosContainer_infosong">
       <h2>{song.album.title}</h2>
       <h2 className="songinfo_titulocancion">{song.titulo}</h2>
