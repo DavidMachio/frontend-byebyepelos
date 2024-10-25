@@ -25,14 +25,14 @@
 
 
 #albums-container{
-    height: 100%;
+    height: auto;
+    min-height: 200px;
     width: 350px;
     min-width: 250px;
     background-color: rgb(18, 18, 18);
-    padding: 10px;
     border-radius: 10px;
-    overflow-x: hidden;
     overflow-y: scroll;
+    padding-bottom: 10px;
 }
 #albums-container > h2 {
     text-align: center;
@@ -46,6 +46,7 @@
     flex-direction: column;
     align-items: center;
     gap: 10px;
+    padding-bottom: 10px;
 }
 
 #section-songs{
@@ -133,13 +134,14 @@
     }
     #albums-container{
         width: 100%;
-        height: 500px;
+        height: 130px;
         background-color: transparent;
+        display: flex;
+        align-items: center;
         justify-content: center;
         border-radius: 0;
         overflow-x: scroll;
         padding:10px 0;
-        
     }
     .albums-container-title {
         display: none;
@@ -152,18 +154,14 @@
         width: 100%;
         padding: 0 10px;
         overflow-y: scroll;
+        gap: 20px;
     }
     #albums-container li{
         width: 100px;
-        min-width: 100px;
+        height: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
-    }
-    #albums-container li img{
-        height: 100%;
-
-        width: 100%;
     }
 }
 @media (max-width:550px){
@@ -171,13 +169,11 @@
         height: 60px;
     }
     #main-music{
-        min-height: calc(100svh - 100px);
+        min-height: calc(100svh - 120px);
         gap: 10px;
 
     }
-    #albums-container{
-        height: 320px;
-    }
+
     
 }
 
