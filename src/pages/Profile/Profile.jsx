@@ -18,6 +18,7 @@ const Profile = () => {
   const { user, setUser, viewEdit, setViewEdit } = useContext(userContext);
   
   
+  
   const [myAlbum, setMyAlbum] = useState({
     _id: 1,
     songs: [],
@@ -46,15 +47,17 @@ const Profile = () => {
   //http://localhost:3000/api/v1
   //https://backend-byebyepelos.vercel.app/api/v1
   useEffect(() => {
+    console.log('me renderizo');
+    
     if (user) {
       fetch(`https://backend-byebyepelos.vercel.app/api/v1/users/${user.name}`)
         .then((res) => res.json())
         .then((res) => {
-          console.log(res[0]);
           setPlayListAlbum({
             songs: res[0].playList
           });
           setMyAlbum({ ...myAlbum, songs: res[0].playList });
+          //setSelectedAlbum(myAlbum)
           
         })
         .catch((err) => console.error("Error fetching user data:", err));
@@ -124,12 +127,20 @@ const Profile = () => {
         const response = await API.put(`/users/${user._id}/remove-song`, {
           songId: songId,
         });
+        
+        
   
         if (response.status === 200) {
           console.log(`Canción ${songId} eliminada de la playlist del usuario`);
   
           // Actualizar la lista de canciones tanto en userData como en playListAlbum
           const updatedSongs = myAlbum.songs.filter((song) => song._id !== songId);
+          
+          setPlayListAlbum(updatedSongs);
+          setMyAlbum((prevState) => ({
+            ...prevState,
+            songs: updatedSongs,
+          }));
           
           // Si la canción actual es la que se eliminó, detener la reproducción
           if (currentSong && currentSong._id === songId) {
@@ -216,8 +227,6 @@ const Profile = () => {
             </div>
             <div className="profile_playlist">
               <h3>Lista de Reproducción:</h3>
-              {console.log(myAlbum.songs)
-              }
               <ul className="profile_ul">
                 {myAlbum.songs && myAlbum.songs.length != 0 ? (
                   myAlbum.songs.map((song, index) => (
@@ -265,9 +274,15 @@ const Profile = () => {
             <SongInfo
               song={currentSong || cancion}
               playPause={playing ? "/pause.png" : "/play.png"}
-              funcionPrev={() => playPrevSong(selectedAlbum, cancion, selecCancion)}
+              funcionPrev={() => {playPrevSong(selectedAlbum, cancion, selecCancion)
+                console.log(selectedAlbum);
+                
+              }}
               funcionPlay={() => selecCancion(currentSong || cancion)}
-              funcionNext={() => playNextSong(selectedAlbum, cancion, selecCancion)}
+              funcionNext={() => {playNextSong(selectedAlbum, cancion, selecCancion)
+                console.log(selectedAlbum);
+                
+              }}
               currentTime={currentTime}
               setCurrentTime={setCurrentTime}
               currentAudio={currentAudio}
@@ -286,8 +301,6 @@ const Profile = () => {
               mostrarplayer={() => setViewPlayer(!viewPlayer)}
             />
           </div>
-          {console.log(selectedAlbum)
-          }
         </div>
       ) : (
         <div className="profile_login_page">

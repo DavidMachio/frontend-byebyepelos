@@ -31,7 +31,6 @@ const Music = () => {
     setCurrentAudio,
     viewPlayer,
     setViewPlayer,
-    currentTime,
     setCurrentTime,
     selectedAlbum,
     setSelectedAlbum,
@@ -128,7 +127,6 @@ const Music = () => {
 
   return (
     <main id="main-music">
-      {console.log("rerenderizando")}
       {isLoading ? (
         <h2>Cargando datos...</h2>
       ) : (
@@ -139,7 +137,7 @@ const Music = () => {
                       />
                       </div>
           <div id="albums-container">
-            <h2>Albums</h2>
+            <h2 className="albums-container-title">Albums</h2>
             <ul>
               {albums.map((album) => (
                 <li
@@ -155,7 +153,6 @@ const Music = () => {
           <div className="left-container">
             <section id="section-songs">
               <Cover album={disco} />
-              {console.log(disco.songs.length)}
               {disco.songs.length > 0 ? (
                 <ul className="ulsongs">
                   {disco.songs.map((song, index) => (
@@ -233,8 +230,6 @@ const Music = () => {
               mostrarplayer={() => setViewPlayer(!viewPlayer)}
             />
           </div>
-          {console.log(selectedAlbum)
-          }
         </>
         
       )}

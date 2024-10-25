@@ -10,7 +10,7 @@ const Album = memo(({album}) => {
       {console.log('renderizando albums')
       }
         <img src={album.cover} alt="Foto de la portada"  />
-        <h2>{album.title}</h2>
+        <h2 className='album_title'>{album.title}</h2>
     </article>
   )
 })

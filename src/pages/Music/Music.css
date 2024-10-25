@@ -41,6 +41,7 @@
 
 #albums-container ul {
     width: 100%;
+    height: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,6 +110,7 @@
         flex-direction: column;
         width: 100%;
         padding: 0;
+        gap: 0;
     }
     .barrareproduciendo{
         width: 100%;
@@ -131,37 +133,37 @@
     }
     #albums-container{
         width: 100%;
-        height: 200px;
+        height: 500px;
         background-color: transparent;
-        align-items: center;
         justify-content: center;
         border-radius: 0;
+        overflow-x: scroll;
+        padding:10px 0;
+        
     }
-    #albums-container h2 {
+    .albums-container-title {
         display: none;
     }
     #albums-container ul{
+        height: auto;
         flex-direction: row;
-        align-items: center;
+        align-items: start;
         justify-content: flex-start;
         width: 100%;
-        height: 100%;
-        max-height: 150px;
-        padding: 0px;
-        overflow: scroll;
+        padding: 0 10px;
+        overflow-y: scroll;
     }
     #albums-container li{
-        height: 100%;
         width: 100px;
         min-width: 100px;
-        padding: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     #albums-container li img{
         height: 100%;
-        max-height: 150px;
 
         width: 100%;
-        padding: 0;
     }
 }
 @media (max-width:550px){
@@ -170,9 +172,13 @@
     }
     #main-music{
         min-height: calc(100svh - 100px);
-        padding: 0;
+        gap: 10px;
 
     }
+    #albums-container{
+        height: 320px;
+    }
+    
 }
 
 
@@ -183,4 +189,5 @@
     to {
         opacity: 1; scale: 100%;
     }
+    
 }

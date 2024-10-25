@@ -5,6 +5,8 @@ export const playPrevSong = (currentDisco, currentSong, selecCancion) => {
     const prevIndex = (currentIndex - 1 + currentDisco.songs.length) % currentDisco.songs.length;
     const prevSong = currentDisco.songs[prevIndex];
     selecCancion(prevSong);
+    console.log(currentDisco);
+    
     
   };
 
@@ -15,4 +17,5 @@ export const playNextSong = (album, currentSong, selecCancion) => {
     const nextIndex = (currentIndex + 1) % album.songs.length;
     const nextSong = album.songs[nextIndex];
     selecCancion(nextSong);
+    
   };

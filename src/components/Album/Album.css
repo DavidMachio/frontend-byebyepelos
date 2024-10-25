@@ -8,14 +8,29 @@
     border-radius: 2px;
     transition: all .3s;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
 }
 
 
 .album-container img{
     width: 100%;
-    aspect-ratio: 1/0.8;
+    aspect-ratio: 1/1;
     object-fit: cover;
+    border-radius: 100%;
 }
-.album-container h2 {
-    font-size: 16px;
+
+
+@media (max-width:1050px){
+    #albums-container-title {
+        display: none;
+    }
+    .album_title {
+        font-size: 12px;
+        text-align: center;
+        color: green;
+    }
 }
