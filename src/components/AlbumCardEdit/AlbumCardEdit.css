@@ -1,0 +1,35 @@
+.albumCardEditcover{
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+}
+.AlbumCardEdit {
+    width: 250px;
+    height: 480px;
+    background-color: rgb(28, 28, 28);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    font-size: 10px;
+}
+.AlbumCardEdit h4 {
+    font-size: 15px;
+}
+.botoneditar {
+    width: 100px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: transparent;
+    border: 1px solid white;
+    cursor: pointer;
+
+}
+.botoneditar:hover {
+    background-color: green;
+    color: black;
+    border: 1px solid black;
+}

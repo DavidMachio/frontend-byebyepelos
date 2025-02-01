@@ -1,0 +1,23 @@
+.cardUser {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: rgb(38, 38, 38);
+    padding: 10px;
+    border-radius: 10px;
+    width: 100%;
+    justify-content: space-between;
+}
+.cardUser_info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.userAvatar{
+    height: 100px;
+    width: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}

@@ -1,4 +1,4 @@
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import Cover from "../../components/Cover/Cover";
 import "./Music.css";
 import Album from "../../components/Album/Album";

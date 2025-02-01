@@ -1,0 +1,30 @@
+.SongCardEdit{
+    height: 400px;
+    width: 300px;
+    background-color: rgb(28, 28, 28);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    font-size: 10px;
+}
+.divbotonescancion{
+    display: flex;
+    gap: 10px;
+}
+.SongCardEdit h4 {
+    font-size: 15px;
+}
+.SongCardEditimagen {
+    height: 200px;
+    width: 200px;
+    object-fit: cover;
+
+}
+
+.botoneliminar:hover {
+    background-color: red;
+}
