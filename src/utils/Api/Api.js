@@ -12,7 +12,7 @@ export const APIHeaders = {
 https://backend-byebyepelos.vercel.app/api/v1
  */
 export const API = axios.create({
-    baseURL: 'http://localhost:3000/api/v1',
+    baseURL: 'https://backend-byebyepelos.vercel.app/api/v1',
     headers: APIHeaders,
 })
 
