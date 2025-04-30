@@ -1,4 +1,32 @@
-input{
-    color: white;
-    background-color: black;
+.formalbumcreate input{
+    color: black;
 }
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.formalbumcreate select{
+    color: black;
+}
+.option {
+    color: black;
+}
+.banner {
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    font-weight: bold;
+  }
+  
+  .banner.loading {
+    background-color: #f0ad4e;
+    color: white;
+  }
+  
+  .banner.success {
+    background-color: #5cb85c;
+    color: white;
+  }
+  

@@ -1,5 +1,20 @@
+.SongCardEditform{
+    position: sticky;
+    height: 600px;
+    width: 400px;
+    background-color: rgb(28, 28, 28);
+    border-radius: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 5px;
+    font-size: 10px;
+}
 .SongCardEdit{
-    height: 400px;
+    height: auto;
+    min-height: 400px;
     width: 300px;
     background-color: rgb(28, 28, 28);
     border-radius: 10px;
@@ -18,7 +33,7 @@
 .SongCardEdit h4 {
     font-size: 15px;
 }
-.SongCardEditimagen {
+.songcardimage img {
     height: 200px;
     width: 200px;
     object-fit: cover;
@@ -28,3 +43,17 @@
 .botoneliminar:hover {
     background-color: red;
 }
+.selected-indicator {
+    color: green;
+    font-size: 12px;
+    margin-left: 10px;
+  }
+  
+  .musician-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .musician-list div {
+    margin-bottom: 8px;
+  }

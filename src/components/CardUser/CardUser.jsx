@@ -1,20 +1,19 @@
-import React from 'react'
-import './CardUser.css'
+import React from 'react';
+import './CardUser.css';
 
-const CardUser = ({user}) => {
+const CardUser = ({ user, onClickDelete }) => {
   return (
     <div className='cardUser'>
       <div className='cardUser_info'>
-      <img className='userAvatar' src={user.avatar} alt="Foto del usuario" />
-      <div>
-      <h2 className='userName'>{user.name}</h2>
-      <h3>{user.email}</h3>
+        <img className='userAvatar' src={user.avatar} alt="Foto del usuario" />
+        <div>
+          <h2 className='userName'>{user.name}</h2>
+          <h3>{user.email}</h3>
+        </div>
       </div>
-      </div>
-      <button className="botoneliminar botoneditar" onClick={() => console.log(user._id)}>Eliminar</button>
-
+      <button className="botoneliminar botoneditar" onClick={onClickDelete}>Eliminar</button>
     </div>
-  )
-}
+  );
+};
 
-export default CardUser
+export default CardUser;

@@ -1,3 +1,5 @@
+
+
 .albumCardEditcover{
     height: 200px;
     width: 200px;
@@ -15,9 +17,30 @@
     text-align: center;
     gap: 5px;
     font-size: 10px;
+    transition: all 0.2s;
+
+}
+.AlbumCardEditform {
+  transition: all 0.2s;
+  position: sticky;
+  height: 600px;
+  width: 400px;
+  background-color: rgb(28, 28, 28);
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 5px;
+  font-size: 10px;
 }
 .AlbumCardEdit h4 {
     font-size: 15px;
+}
+.album-cover img {
+    height: 100px;
+    width: 100px;
 }
 .botoneditar {
     width: 100px;
@@ -33,3 +56,132 @@
     color: black;
     border: 1px solid black;
 }
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.763);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  .modal-content {
+    background-color: #4a4a4a;
+    padding: 20px;
+    border-radius: 8px;
+    width: 700px;
+    position: relative;
+    height: 500px;
+    overflow: scroll;
+  }
+  .modal-content h4 {
+    padding: 10px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+  }
+  
+  .close-btn {
+    position:fixed;
+    right: 50%;
+    top: 50px;
+    font-size: 20px;
+    background: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    width: 50px;
+  }
+  .eliminarmusico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    
+  }
+  .musicoañadido {
+    display: flex;
+    background-color: grey;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    border-radius: 5px;
+  }
+  .listamusicosañadidos {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 5px;
+    max-width: 200px;
+  }
+  .añadircanciones {
+    color: black;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    
+  }
+  .añadircanciones:hover{
+    background-color: green;
+  }
+  .añadircancion:hover{
+    background-color: green;
+    cursor: pointer;
+  }
+  .eliminarcancion{
+    background-color: red;
+    cursor: pointer;
+  }
+  .cancionesactuales{
+    color: black;
+    display: flex;
+    align-items: center;
+  }
+  .cancionesactuales:hover{
+    background-color: green;
+  }
+  .ulcancion {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .licancion {
+    background-color: rgb(63, 63, 63);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.463);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+
+  }
+  .licancion  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+  }
+  .cancion {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .cancion img {
+    height: 50px;
+    width: 50px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  .cancion p {
+    font-size: 16px;
+  }

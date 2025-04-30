@@ -15,36 +15,31 @@ const PanelAdmin = () => {
 
   const [albums, setAlbums] = useState([]);
   const [songs, setSongs] = useState([]);
-  const [view, setView] = useState(''); // Controla la vista actual
-  const [users, setUsers] = useState([])
+  const [view, setView] = useState('');
+  const [users, setUsers] = useState([]);
 
   const getUsers = async () => {
     try {
       const res = await API.get('/users');
-      
-      /* const data = await response.json(); */
       if (Array.isArray(res.data)) {
         setUsers(res.data);
         setView('usuarios');
       } else {
-        console.error("La respuesta no es un array:", data);
+        console.error("La respuesta no es un array:", res.data);
       }
     } catch (error) {
       console.error("Error al obtener los usuarios:", error);
     }
   };
 
- 
   const getAlbums = async () => {
     try {
       const res = await API.get('/albums');
-      
-      /* const data = await response.json(); */
       if (Array.isArray(res.data)) {
         setAlbums(res.data);
         setView('albums');
       } else {
-        console.error("La respuesta no es un array:", data);
+        console.error("La respuesta no es un array:", res.data);
       }
     } catch (error) {
       console.error("Error al obtener los álbumes:", error);
@@ -58,13 +53,61 @@ const PanelAdmin = () => {
         setSongs(response.data);
         setView('songs');
       } else {
-        console.error("La respuesta no es un array:", data);
+        console.error("La respuesta no es un array:", response.data);
       }
     } catch (error) {
       console.error("Error al obtener las canciones:", error);
     }
   };
 
+  const handleDeleteSong = async (id) => {
+    try {
+      await API.delete(`/songs/${id}`);
+      setSongs((prevSongs) => prevSongs.filter((song) => song._id !== id));
+    } catch (error) {
+      console.error("Error al eliminar la canción:", error);
+    }
+  };
+
+  const handleDeleteAlbum = async (id) => {
+    try {
+      await API.delete(`/albums/${id}`);
+      setAlbums((prevAlbums) => prevAlbums.filter((album) => album._id !== id));
+    } catch (error) {
+      console.error("Error al eliminar el álbum:", error);
+    }
+  };
+
+  const handleDeleteUser = async (id) => {
+    const confirm = window.confirm("¿Estás seguro de que deseas eliminar este usuario?");
+    if (!confirm) return;
+
+    try {
+      await API.delete(`/users/${id}`);
+      setUsers((prevUsers) => prevUsers.filter((u) => u._id !== id));
+    } catch (error) {
+      console.error("Error al eliminar el usuario:", error);
+      alert("Hubo un error al eliminar el usuario");
+    }
+  };
+
+  const handleUpdateSong = async (id, updatedData) => {
+    try {
+      const config = updatedData instanceof FormData
+        ? { headers: { 'Content-Type': 'multipart/form-data' } }
+        : {};
+
+      const res = await API.put(`/songs/${id}`, updatedData, config);
+
+      setSongs((prevSongs) =>
+        prevSongs.map((song) =>
+          song._id === id ? res.data.song : song
+        )
+      );
+    } catch (error) {
+      console.error("Error al actualizar la canción:", error);
+    }
+  };
 
   return (
     <div className='divadmin'>
@@ -82,23 +125,27 @@ const PanelAdmin = () => {
               <ul className='albumsList'>
                 {albums.map((album) => (
                   <li key={album._id}>
-                    <AlbumCardEdit album={album}/>
+                    <AlbumCardEdit album={album} onDelete={handleDeleteAlbum} />
                   </li>
                 ))}
               </ul>
             ) : view === 'songs' && songs.length > 0 ? (
               <ul className='songsList'>
                 {songs.map((song) => (
-                  <li key={song._id}><SongCardEdit song={song}/></li>
+                  <li key={song._id}>
+                    <SongCardEdit song={song} onDelete={handleDeleteSong} onUpdate={handleUpdateSong} />
+                  </li>
                 ))}
               </ul>
             ) : view === 'usuarios' && users.length > 0 ? (
               <ul className='usersList'>
                 {users.map((user) => (
-                  <li key={user._id}><CardUser user={user}/></li>
+                  <li key={user._id}>
+                    <CardUser user={user} onClickDelete={() => handleDeleteUser(user._id)} />
+                  </li>
                 ))}
               </ul>
-            )  : view === 'createAlbum' ? (
+            ) : view === 'createAlbum' ? (
               <CreateAlbumForm />
             ) : view === 'createSong' ? (
               <FormCreateSong />
@@ -107,7 +154,7 @@ const PanelAdmin = () => {
             )}
           </section>
         </main>
-      ) : ''}
+      ) : null}
     </div>
   );
 };
