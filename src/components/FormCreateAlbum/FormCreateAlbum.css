@@ -1,13 +1,30 @@
-.formalbumcreate input{
-    color: black;
+.formalbumcreate{
+  width: 600px;
+  height: 600px;
+  background-color: rgb(61, 61, 61);
+  border: 2px solid green;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: left;
+  color: black;
 }
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.formalbumcreate input, .formalbumcreate select {
+  color: black;
 }
-.formalbumcreate select{
-    color: black;
+.formalbumcreate select {
+  width: 300px;
+}
+.cargadeimagen {
+  background-color: white;
+}
+.formalbumcreate input:focus, .formalbumcreate select:focus {
+  border: 2px solid green;
+  border-radius: 5px;
+  
+  outline: none; /* Opcional, para quitar el contorno predeterminado del navegador */
 }
 .option {
     color: black;
@@ -28,5 +45,9 @@ form {
   .banner.success {
     background-color: #5cb85c;
     color: white;
+  }
+  .removebutton {
+    background-color: transparent;
+    border: none;
   }
   

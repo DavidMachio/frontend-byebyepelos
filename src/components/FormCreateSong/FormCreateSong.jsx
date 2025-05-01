@@ -11,9 +11,11 @@ const FormCreateSong = () => {
     formState: { errors },
   } = useForm();
 
-  const { albums, musicians, setAlbums } = useContext(MusicContext); // Obtener datos del contexto
+  const { albums, musicians } = useContext(MusicContext); // Obtener datos del contexto
   const [selectedMusician, setSelectedMusician] = useState('');
   const [addedMusicians, setAddedMusicians] = useState([]);
+  const [isCreating, setIsCreating] = useState(false); // nuevo estado
+  const [showSuccess, setShowSuccess] = useState(false); // nuevo estado
 
   const addMusician = (id) => {
     if (!addedMusicians.includes(id)) {
@@ -26,6 +28,8 @@ const FormCreateSong = () => {
   };
 
   const onSubmit = async (data) => {
+    setIsCreating(true);
+
     try {
       const formData = new FormData();
       formData.append('imagen', data.imagen[0]);
@@ -40,9 +44,10 @@ const FormCreateSong = () => {
           'Content-Type': 'multipart/form-data',
         },
       });
+      setShowSuccess(true);
+      setTimeout(() => setShowSuccess(false), 3000);
 
-      alert('Canción creada exitosamente');
-      console.log(response.data);
+      
 
       // Reset estado
       setAddedMusicians([]);
@@ -50,14 +55,20 @@ const FormCreateSong = () => {
     } catch (error) {
       console.error('Error al crear la canción', error);
       alert('Hubo un error al crear la canción');
+    } finally{
+      setIsCreating(false);
+
     }
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="formcreate-song">
+    <form onSubmit={handleSubmit(onSubmit)} className="formcreatesong">
+      {isCreating && <div className="banner loading">Creando álbum...</div>}
+      {showSuccess && <div className="banner success">Álbum creado correctamente</div>}
       <label>
         Imagen:
         <input
+        className='cargadeimagen'
           type="file"
           {...register('imagen', { required: 'La imagen es obligatoria' })}
         />
@@ -87,8 +98,7 @@ const FormCreateSong = () => {
         {errors.audio && <p>{errors.audio.message}</p>}
       </label>
 
-      <label>
-        Álbum:
+      
         <select {...register('album', { required: 'El álbum es obligatorio' })}>
           <option value="">Selecciona un álbum</option>
           {albums.map((album) => (
@@ -98,11 +108,11 @@ const FormCreateSong = () => {
           ))}
         </select>
         {errors.album && <p>{errors.album.message}</p>}
-      </label>
+      
 
       {/* Selección de músicos */}
       <div className="musician-select">
-        <label>Seleccionar Músicos</label>
+        
         <select
           value={selectedMusician}
           onChange={(e) => {
@@ -141,7 +151,7 @@ const FormCreateSong = () => {
         </div>
       </div>
 
-      <button className="botoneditar" type="submit">Crear Canción</button>
+      <button className="botoneditar" type="submit" disabled={isCreating}>Crear Canción</button>
     </form>
   );
 };

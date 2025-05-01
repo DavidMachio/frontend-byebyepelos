@@ -26,7 +26,7 @@ const Home = () => {
         <img src="https://res.cloudinary.com/drmbhl3f6/image/upload/v1722087931/Paco_Salazar_ftnlo0.jpg" alt="" />
         <h4>Durante varios años y hasta el comienzo de 2020 desarrollamos un repertorio basado en versiones de blues, r&b, rock y pop; y también algunas composiciónes propias, en diversos clubs de Madrid. Entre ellos nos gustaría destacar el Café Casa Pueblo dónde durante aproximadamente dos años y medio disfrutamos del cariño de Arturo (promotor) y del heterogéneo público que visitaba este precioso bar del Barrio de las Letras en Madrid. </h4>
       </article>
-      <img src="https://yourbutlerinmadrid.com/wp-content/uploads/2023/02/blog-YBIM-post-Barrio-de-las-Letras-01-opt.jpg" alt="" />
+      <img src="https://res.cloudinary.com/drmbhl3f6/image/upload/v1746111083/barrio_de_las_letras_j4rkqc.jpg" alt="" />
       <article>
         <h4>En estas actuaciones contamos con colaboraciones como las de Luismi Baladron, Manu Sirvent, Kike Rubio, Marina Hernandez o el Gran Wyoming... A todos les agradecemos su cariño y su buen hacer.  
         A partir de 2020 dedicamos toda nuestra atención al conjunto de grabaciones que en formato de disco puedes encontrar en esta web.</h4>

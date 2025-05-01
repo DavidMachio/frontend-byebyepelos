@@ -1,0 +1,32 @@
+.formcreatesong{
+    width: 600px;
+    height: 600px;
+    background-color: rgb(61, 61, 61);
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    text-align: left;
+    color: black;
+}
+.formcreatesong input, .formcreatesong select {
+    color: black;
+    background-color: white;
+}
+.formcreatesong select {
+    width: 300px;
+}
+.cargadeimagen {
+    background-color: white;
+}
+.formcreatesong input:focus, .formcreatesong select:focus {
+    border: 2px solid green;
+    border-radius: 5px;
+    
+    outline: none; /* Opcional, para quitar el contorno predeterminado del navegador */
+  }
+  .subidafoto{
+    background-color: white;
+  }

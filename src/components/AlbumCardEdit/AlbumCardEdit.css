@@ -42,6 +42,17 @@
     height: 100px;
     width: 100px;
 }
+.AlbumCardEditform select{
+  color: black;
+}
+.AlbumCardEditform input{
+  color: black;
+  background-color: white;
+}
+.AlbumCardEditform {
+  display: flex;
+  gap: 10px;
+}
 .botoneditar {
     width: 100px;
     padding: 5px;
@@ -124,15 +135,23 @@
     gap: 5px;
     max-width: 200px;
   }
-  .añadircanciones {
+  .añadircanciones, .cancionesactuales {
     color: black;
     cursor: pointer;
     display: flex;
+    justify-content: center;
     align-items: center;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
     
   }
-  .añadircanciones:hover{
-    background-color: green;
+  .añadircancion {
+    height: 30px;
+    width: 60px;
+    border: none;
+    border-radius: 5px;
   }
   .añadircancion:hover{
     background-color: green;
@@ -142,14 +161,8 @@
     background-color: red;
     cursor: pointer;
   }
-  .cancionesactuales{
-    color: black;
-    display: flex;
-    align-items: center;
-  }
-  .cancionesactuales:hover{
-    background-color: green;
-  }
+  
+  
   .ulcancion {
     display: flex;
     flex-direction: column;

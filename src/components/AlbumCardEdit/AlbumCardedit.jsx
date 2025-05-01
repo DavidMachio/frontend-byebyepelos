@@ -142,7 +142,7 @@ const AlbumCardEdit = ({ album, onDelete }) => {
     return (
       <article className="AlbumCardEditform">
         <input type="text" name="title" value={formData.title} onChange={handleChange} placeholder="Título" />
-        <input type="number" name="year" value={formData.year} onChange={handleChange} placeholder="Año" />
+        <input type="text" name="year" value={formData.year} onChange={handleChange} placeholder="Año" />
         <input type="file" accept="image/*" onChange={handleFileChange} />
 
         <div>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { API } from "../../utils/Api/Api";
-import './FormCreateAlbum.css';
+import "./FormCreateAlbum.css";
 
 const FormCreateAlbum = () => {
   const [formData, setFormData] = useState({
@@ -82,22 +82,34 @@ const FormCreateAlbum = () => {
   };
 
   return (
-    <form className="formalbumcreate" onSubmit={handleSubmit} encType="multipart/form-data">
+    <form
+      className="formalbumcreate"
+      onSubmit={handleSubmit}
+      encType="multipart/form-data"
+    >
       {isCreating && <div className="banner loading">Creando álbum...</div>}
-      {showSuccess && <div className="banner success">Álbum creado correctamente</div>}
+      {showSuccess && (
+        <div className="banner success">Álbum creado correctamente</div>
+      )}
 
-      <input
-        type="text"
-        placeholder="Título del álbum"
-        value={formData.title}
-        onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-      />
-      <input
-        type="number"
-        placeholder="Año"
-        value={formData.year}
-        onChange={(e) => setFormData({ ...formData, year: e.target.value })}
-      />
+      <label>
+        Titulo:
+        <input
+          type="text"
+          placeholder="Título del álbum"
+          value={formData.title}
+          onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+        />
+      </label>
+      <label>
+        Año del álbum:
+        <input
+          type="text"
+          placeholder="Año"
+          value={formData.year}
+          onChange={(e) => setFormData({ ...formData, year: e.target.value })}
+        />
+      </label>
       <input
         className="subidafoto"
         type="file"
@@ -115,7 +127,9 @@ const FormCreateAlbum = () => {
             setSelectedMusician("");
           }}
         >
-          <option value="" disabled>Selecciona un músico</option>
+          <option value="" disabled>
+            Selecciona un músico
+          </option>
           {musiciansList.map((musician) => (
             <option key={musician._id} value={musician._id}>
               {musician.firstName} {musician.secondName}
@@ -126,18 +140,20 @@ const FormCreateAlbum = () => {
         {/* Lista de músicos seleccionados */}
         <div>
           <h3>Músicos seleccionados</h3>
-          <ul>
+          <ul className="listamusicosañadidos">
             {formData.musicians.map((musicianId) => {
               const musician = musiciansList.find((m) => m._id === musicianId);
               return (
-                <li key={musicianId}>
-                  {musician ? `${musician.firstName} ${musician.secondName}` : "Músico no encontrado"}
+                <li className="musicoañadido" key={musicianId}>
+                  {musician
+                    ? `${musician.firstName} ${musician.secondName}`
+                    : "Músico no encontrado"}
                   <button
                     type="button"
                     onClick={() => removeMusician(musicianId)}
-                    className="remove-button"
+                    className="eliminarmusico"
                   >
-                    Eliminar
+                    ❌
                   </button>
                 </li>
               );
@@ -153,7 +169,9 @@ const FormCreateAlbum = () => {
           value={formData.mixed}
           onChange={(e) => setFormData({ ...formData, mixed: e.target.value })}
         >
-          <option value="" disabled>Selecciona el músico que mezcló</option>
+          <option value="" disabled>
+            Selecciona el músico que mezcló
+          </option>
           {musiciansList.map((musician) => (
             <option key={musician._id} value={musician._id}>
               {musician.firstName} {musician.secondName}
