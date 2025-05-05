@@ -63,8 +63,8 @@ const FormCreateSong = () => {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="formcreatesong">
-      {isCreating && <div className="banner loading">Creando álbum...</div>}
-      {showSuccess && <div className="banner success">Álbum creado correctamente</div>}
+      {isCreating && <div className="banner loading">Creando canción...</div>}
+      {showSuccess && <div className="banner success">Canción creado correctamente</div>}
       <label>
         Imagen:
         <input

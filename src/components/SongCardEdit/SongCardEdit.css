@@ -39,6 +39,9 @@
     object-fit: cover;
 
 }
+.SongCardEditform input {
+    color: black;
+}
 
 .botoneliminar:hover {
     background-color: red;
