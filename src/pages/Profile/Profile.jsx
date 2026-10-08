@@ -4,6 +4,7 @@ import "./Profile.css";
 import { useContext, useEffect, useState } from "react";
 import { userContext } from "../../context/UserContext";
 import { useMusicContext } from "../../context/MusicContext";
+import { API_URL } from "../../utils/Api/apiUrl";
 import {
   playNextSong,
   playPrevSong,
@@ -44,13 +45,11 @@ const Profile = () => {
     setPlayListAlbum
   } = useMusicContext();
 
-  //http://localhost:3000/api/v1
-  //https://backend-byebyepelos.vercel.app/api/v1
   useEffect(() => {
     console.log('me renderizo');
     
     if (user) {
-      fetch(`https://backend-byebyepelos.vercel.app/api/v1/users/${user.name}`)
+      fetch(`${API_URL}/users/${user.name}`)
         .then((res) => res.json())
         .then((res) => {
           setPlayListAlbum({

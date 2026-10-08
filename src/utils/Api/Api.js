@@ -1,4 +1,5 @@
 import axios from "axios";
+import { API_URL } from "./apiUrl";
 
 export const APIHeaders = {
     'Content-Type': 'application/json',
@@ -8,11 +9,9 @@ export const APIHeaders = {
         }
     }
 }
-/* http://localhost:3000/api/v1
-https://backend-byebyepelos.vercel.app/api/v1
- */
+// La URL del backend se define en apiUrl.js (variable VITE_API_URL)
 export const API = axios.create({
-    baseURL: 'https://backend-byebyepelos.vercel.app/api/v1',
+    baseURL: API_URL,
     headers: APIHeaders,
 })
 

@@ -1,5 +1,6 @@
 // MusicContext.js
 import { createContext, useContext, useEffect, useState } from 'react';
+import { API_URL } from '../utils/Api/apiUrl';
 
 export const MusicContext = createContext();
 
@@ -23,7 +24,7 @@ export const MusicProvider = ({ children }) => {
   });
 
   useEffect(() => {
-    fetch('https://backend-byebyepelos.vercel.app/api/v1/albums')
+    fetch(`${API_URL}/albums`)
       .then((res) => res.json())
       .then((res) => {
         setAlbums(res);
@@ -33,7 +34,7 @@ export const MusicProvider = ({ children }) => {
         setSelectedAlbum(res[0]);
       });
 
-    fetch('https://backend-byebyepelos.vercel.app/api/v1/musicians')
+    fetch(`${API_URL}/musicians`)
       .then((res) => res.json())
       .then((res) => {
         setMusicians(res);
