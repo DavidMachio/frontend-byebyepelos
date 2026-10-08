@@ -1,9 +1,9 @@
 import axios from "axios";
+import { API_URL } from "./apiUrl";
 
-// Creando la instancia de Axios
+// Creando la instancia de Axios (la URL del backend se define en apiUrl.js)
 export const REGISTER = axios.create({
-  //http://localhost:3000/api/v1
-  baseURL: 'https://backend-byebyepelos.vercel.app/api/v1',
+  baseURL: API_URL,
   headers: {
     'Authorization': {
       toString() {
