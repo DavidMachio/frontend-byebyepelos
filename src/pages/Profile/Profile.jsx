@@ -4,7 +4,6 @@ import "./Profile.css";
 import { useContext, useEffect, useState } from "react";
 import { userContext } from "../../context/UserContext";
 import { useMusicContext } from "../../context/MusicContext";
-import { API_URL } from "../../utils/Api/apiUrl";
 import {
   playNextSong,
   playPrevSong,
@@ -49,13 +48,13 @@ const Profile = () => {
     console.log('me renderizo');
     
     if (user) {
-      fetch(`${API_URL}/users/${user.name}`)
-        .then((res) => res.json())
+      // Playlist del usuario con sesión iniciada: el servidor la busca con el token, no con el nombre
+      API.get('/users/me/playlist')
         .then((res) => {
           setPlayListAlbum({
-            songs: res[0].playList
+            songs: res.data
           });
-          setMyAlbum({ ...myAlbum, songs: res[0].playList });
+          setMyAlbum({ ...myAlbum, songs: res.data });
           //setSelectedAlbum(myAlbum)
           
         })
