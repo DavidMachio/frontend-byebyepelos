@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { userContext } from "../../context/UserContext";
 import { routes } from "../../utils/datas/routes";
 import { MusicContext } from "../../context/MusicContext";
+import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 const BarNav = () => {
   const { user } = useContext(userContext);
@@ -24,15 +25,18 @@ const BarNav = () => {
       {/* <NavLink to="/about">
         About
         </NavLink> */}
-      <NavLink to="/profile" className={`profile ${user ? "border" : ""}`}>
-        <img
-          className={!user ? "default" : ""}
-          src={user ? user.avatar : "/user.png"}
-          alt="Foto del perfil"
-          onClick={()=>setViewPlayer(false)
-          }
-        />
-      </NavLink>
+      <div className="bar-nav_right">
+        <ThemeToggle />
+        <NavLink to="/profile" className={`profile ${user ? "border" : ""}`}>
+          <img
+            className={!user ? "default" : ""}
+            src={user ? user.avatar : "/user.png"}
+            alt="Foto del perfil"
+            onClick={()=>setViewPlayer(false)
+            }
+          />
+        </NavLink>
+      </div>
       {/* {admin && admin=== 'admin' ? <NavLink to='/profile' className={'profile'}>
         <img src={avatar} alt="Foto del perfil" />
         </NavLink> : ''} */}

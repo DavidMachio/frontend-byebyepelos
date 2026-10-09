@@ -37,3 +37,14 @@
     border-radius: 100%;
     
 }
+.bar-nav_right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+/* En pantallas estrechas se reduce el hueco para que quepa el botón de tema */
+@media (max-width: 480px) {
+    #bar-nav {
+        gap: 20px;
+    }
+}

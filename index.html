@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="https://images.vexels.com/media/users/3/161230/isolated/lists/1fa58bd038c77c9d668475b9f05126a5-ilustracion-de-banda-de-disco-de-vinilo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Aplica el tema guardado antes de pintar, para que no parpadee
+      try {
+        var t = localStorage.getItem("bbp-theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    </script>
     <title>ByeByePelosMusic</title>
   </head>
   <body>
