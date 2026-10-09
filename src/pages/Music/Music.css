@@ -105,6 +105,28 @@
 }
 
 
+/* Álbumes en cuadrícula de 2 columnas en escritorio; en ≤1050 px sigue el carrusel */
+@media (min-width:1051px){
+    #albums-container ul {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px 10px;
+        padding: 0 10px 10px;
+        justify-items: center;
+    }
+    #albums-container .liAlbum {
+        width: 100%;
+        border-radius: 10px;
+    }
+    #albums-container .liAlbum:hover {
+        background-color: var(--surface-hover);
+    }
+    #albums-container .liAlbum_activo {
+        background-color: var(--surface-playing);
+        outline: 1px solid var(--accent-ink);
+    }
+}
+
 @media (max-width:1050px){
     #main-music{
         height: calc(100svh - 160px);
