@@ -1,32 +1,32 @@
 .formcreatesong{
     width: 600px;
     height: 600px;
-    background-color: rgb(61, 61, 61);
-    border: 2px solid green;
+    background-color: var(--surface-raised);
+    border: 2px solid var(--accent-ink);
     border-radius: 10px;
     padding: 20px;
     display: flex;
     flex-direction: column;
     gap: 10px;
     text-align: left;
-    color: black;
+    color: var(--ink);
 }
 .formcreatesong input, .formcreatesong select {
-    color: black;
-    background-color: white;
+    color: var(--ink);
+    background-color: var(--surface-base);
+    border: 1px solid var(--outline);
 }
 .formcreatesong select {
     width: 300px;
 }
 .cargadeimagen {
-    background-color: white;
+    background-color: var(--surface-base);
 }
 .formcreatesong input:focus, .formcreatesong select:focus {
-    border: 2px solid green;
+    border-color: var(--accent-ink);
     border-radius: 5px;
-    
-    outline: none; /* Opcional, para quitar el contorno predeterminado del navegador */
+    outline: 2px solid var(--accent-ink); /* foco visible para quien usa teclado */
   }
   .subidafoto{
-    background-color: white;
+    background-color: var(--surface-base);
   }
