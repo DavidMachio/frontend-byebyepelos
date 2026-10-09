@@ -7,31 +7,18 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    color: white;
+    color: var(--ink);
     font-weight: 300;
     text-decoration: none;
     list-style: none;
 }
 body {
-    background-color: black;
-}
-
-/* Texto de los contenedores de la Fase 1 (formularios y ventanas modales).
-   La regla `*` de arriba pone `color: white` directamente en cada elemento,
-   así que el color no se hereda: hay que decirlo para los descendientes.
-   Con :where() la especificidad es cero y cualquier estilo de componente
-   (un error en rojo, un botón con texto oscuro...) sigue ganando.
-   La Fase 2 añadió Music, Perfil, BarPlaying y SongInfo; la Fase 3 el resto. */
-:where(.mainlogin, .mainregister, .formEditUser, .formalbumcreate, .formcreatesong,
-       .AlbumCardEdit, .AlbumCardEditform, .SongCardEdit, .SongCardEditform,
-       .songAdded_div, .modal, .profile_container_edit,
-       #main-music, .mainprofile, .barplaying, .componenteSongInfo) :where(*) {
-    color: var(--ink);
+    background-color: var(--surface-base);
 }
 
 /* Campos de formulario.
-   La regla `*` de arriba pone el texto en blanco en todo, también dentro de
-   los campos: sin esta base saldría texto claro sobre fondo claro en modo
+   La regla `*` de arriba pone el texto con el color de tinta en todo, también dentro de
+   los campos: sin esta base podría salir texto claro sobre fondo claro en modo
    claro. Usa :where() para tener especificidad cero, así cualquier estilo de
    componente sigue ganando. Los archivos y los deslizadores se excluyen
    porque tienen su propio aspecto. */
