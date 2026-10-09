@@ -1,0 +1,27 @@
+.themetoggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 1px solid var(--outline);
+    cursor: pointer;
+}
+.themetoggle:hover {
+    background-color: var(--surface-hover);
+}
+.themetoggle:focus-visible {
+    outline: 2px solid var(--accent-ink);
+    outline-offset: 2px;
+}
+.themetoggle svg {
+    height: 22px;
+    width: 22px;
+    fill: none;
+    stroke: var(--ink);
+    stroke-width: 1.8;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
