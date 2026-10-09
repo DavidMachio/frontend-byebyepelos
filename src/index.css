@@ -14,3 +14,29 @@
 body {
     background-color: black;
 }
+
+/* Campos de formulario.
+   La regla `*` de arriba pone el texto en blanco en todo, también dentro de
+   los campos, que por defecto tienen fondo blanco: texto blanco sobre blanco.
+   Esta base les da texto negro y fondo blanco. Usa :where() para tener
+   especificidad cero, así cualquier estilo de componente (por ejemplo el
+   login oscuro) sigue ganando. Los archivos y los deslizadores se excluyen
+   porque tienen su propio aspecto. */
+:where(input:not([type="file"]):not([type="range"]), select, textarea) {
+    color: #000;
+    background-color: #fff;
+}
+
+/* Opciones de los desplegables: heredan texto y fondo del propio select,
+   para que se lean igual en un select claro que en uno oscuro. */
+select option {
+    color: inherit;
+    background-color: inherit;
+}
+select option:disabled {
+    color: #757575;
+}
+select option:checked:not(:disabled) {
+    color: #fff;
+    background-color: #008000;
+}
