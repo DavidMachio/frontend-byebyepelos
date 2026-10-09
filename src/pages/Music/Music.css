@@ -114,12 +114,12 @@
         gap: 0;
     }
     .barrareproduciendo{
-        width: 100%;
-    height: 100px;
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    z-index: 100;
+        height: 76px;
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        z-index: 100;
         display: flex;
     }
     .right-container{
@@ -167,6 +167,9 @@
 @media (max-width:550px){
     .barrareproduciendo{
         height: 60px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
     }
     #main-music{
         min-height: calc(100svh - 120px);

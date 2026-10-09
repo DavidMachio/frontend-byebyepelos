@@ -199,11 +199,11 @@
 }
 
 .cancionActual{
-    height: 100px;
-    width: 100%;
-    background-color: var(--surface-base);
+    height: 76px;
     position: fixed;
-    bottom: 0;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
 }
 .navtomusic{
     cursor: pointer;
@@ -217,5 +217,8 @@
 @media (max-width:550px){
     .cancionActual{
         height: 50px;
+        left: 8px;
+        right: 8px;
+        bottom: 8px;
     }
 }
