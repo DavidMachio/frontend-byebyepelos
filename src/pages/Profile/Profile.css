@@ -56,29 +56,30 @@
     align-items: center;
     gap: 10px;
     padding: 10px;
+    padding-top: 110px;
     width: 100%;
-    height: 500px;
-    
+    min-height: 340px;
 }
 .profile_avatar {
     height: 200px;
     width: 200px;
     border-radius: 100%;
     object-fit: cover;
+    border: 4px solid var(--surface-base);
+    flex: none;
 }
 .profile_user_dates{
-    background-color: var(--scrim);
-  backdrop-filter: blur(4px);
-  border: 1px solid var(--veil);
-  border-radius: 10px;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 0 10px;
 }
 .profile_user_name, .profile_user_email {
-    color: #F5F9FC; /* sobre la tarjeta de cristal oscura: siempre claro */
+    color: var(--ink);
     font-weight: 400;
+}
+.profile_user_email {
+    color: var(--ink-muted);
 }
 .profile_options{
     display: flex;
@@ -106,7 +107,7 @@
     background-color: var(--accent-pressed);
 }
 .profile_logout {
-    color: #F5F9FC; /* sobre la tarjeta de cristal oscura: siempre claro */
+    color: var(--ink);
     background-color: transparent;
     width: 150px;
     height: 30px;
@@ -131,13 +132,43 @@
     color: var(--on-accent);
 }
 .profile_foto_fondo{
-    height: 100%;
+    height: 260px;
     width: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
     z-index: -1;
     filter: blur(10px);
     background-position: center;
-    
+}
+/* La banda se funde con el fondo de la página */
+.profile_dates_container::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 260px;
+    z-index: -1;
+    background: linear-gradient(to top, var(--surface-base) 0%, transparent 70%);
+}
+@media (min-width: 800px){
+    .profile_dates_container{
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: center;
+        gap: 30px;
+    }
+    .profile_user_dates{
+        align-items: flex-start;
+        text-align: left;
+        padding-bottom: 10px;
+    }
+    .profile_options{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
 }
 .profile_playlist{
     padding-bottom: 60px;
