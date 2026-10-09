@@ -21,10 +21,11 @@ body {
    así que el color no se hereda: hay que decirlo para los descendientes.
    Con :where() la especificidad es cero y cualquier estilo de componente
    (un error en rojo, un botón con texto oscuro...) sigue ganando.
-   Las fases 2 y 3 ampliarán esta lista. */
+   La Fase 2 añadió Music, Perfil, BarPlaying y SongInfo; la Fase 3 el resto. */
 :where(.mainlogin, .mainregister, .formEditUser, .formalbumcreate, .formcreatesong,
        .AlbumCardEdit, .AlbumCardEditform, .SongCardEdit, .SongCardEditform,
-       .songAdded_div, .modal, .profile_container_edit) :where(*) {
+       .songAdded_div, .modal, .profile_container_edit,
+       #main-music, .mainprofile, .barplaying, .componenteSongInfo) :where(*) {
     color: var(--ink);
 }
 

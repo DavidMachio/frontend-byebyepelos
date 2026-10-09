@@ -50,6 +50,10 @@
   --radius-sm: 5px;
   --radius-md: 10px;
   --radius-round: 50%;
+
+  /* Los iconos de /public son PNG negros: se tiñen con filtros según el modo */
+  --icon-filter: invert(1);          /* icono sobre una superficie (blanco en oscuro) */
+  --icon-filter-inverse: none;       /* icono sobre un relleno ink (negro en oscuro) */
 }
 
 :root[data-theme="light"] {
@@ -70,6 +74,8 @@
   --status-medium: #8A6100;
   --status-low: #3B4F8A;
   --status-ok: #1E7B3E;
+  --icon-filter: none;
+  --icon-filter-inverse: invert(1);
 }
 
 @media (prefers-color-scheme: light) {
@@ -91,5 +97,7 @@
     --status-medium: #8A6100;
     --status-low: #3B4F8A;
     --status-ok: #1E7B3E;
+    --icon-filter: none;
+    --icon-filter-inverse: invert(1);
   }
 }
