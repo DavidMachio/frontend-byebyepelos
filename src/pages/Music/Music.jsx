@@ -142,7 +142,7 @@ const Music = () => {
               {albums.map((album) => (
                 <li
                   key={album._id}
-                  className="liAlbum"
+                  className={`liAlbum ${disco._id === album._id ? "liAlbum_activo" : ""}`}
                   onClick={() => selecAlbum(album)}
                 >
                   <Album album={album} />
