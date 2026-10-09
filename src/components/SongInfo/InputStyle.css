@@ -5,8 +5,13 @@ input[type='range'] {
     background-color: transparent;
   }
   
-  input[type='range']:focus {
+  input[type='range']:focus:not(:focus-visible) {
     outline: none;
+  }
+  
+  input[type='range']:focus-visible {
+    outline: 2px solid var(--accent-ink);
+    outline-offset: 4px;
   }
   
   input[type='range'],
@@ -16,15 +21,15 @@ input[type='range'] {
   }
   
   input[type=range]::-webkit-slider-thumb {
-    background-color: #ffffff;
+    background-color: var(--ink);
     width: 20px;
     height: 20px;
     border-radius: 50%;
     margin-top: -7px;
-    box-shadow: 0 0 5px black;
+    box-shadow: 0 0 5px var(--scrim-soft);
   }
   input[type=range]::-webkit-slider-runnable-track {
-    background-color: #ffffff;
+    background-color: var(--outline);
     height: 6px;
     border-radius: 4px;
   }
