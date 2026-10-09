@@ -1,11 +1,17 @@
-import { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef, useState } from "react";
 import "./Home.css";
 import { useMusicContext } from "../../context/MusicContext";
 import BarPlaying from "../../components/BarPlaying/BarPlaying";
 import { NavLink } from "react-router-dom";
 
 const Home = () => {
-  const { cancion, playing, currentSong, selectedAlbum, viewPlayer } = useMusicContext();
+  const { cancion, playing, currentSong, selectedAlbum, viewPlayer, albums, setDisco } = useMusicContext();
+  const [filtro, setFiltro] = useState("todo");
+  const filtros = [
+    { id: "todo", texto: "Todo" },
+    { id: "historia", texto: "Historia" },
+    { id: "discos", texto: "Discos" },
+  ];
   const mainRef = useRef(null);
 
   // Aparición suave al hacer scroll. Si no hay IntersectionObserver o la
@@ -28,7 +34,7 @@ const Home = () => {
     );
     main.querySelectorAll(".reveal").forEach((el) => observer.observe(el));
     return () => observer.disconnect();
-  }, []);
+  }, [filtro, albums]);
 
   return (
     <main className="mainhome" ref={mainRef}>
@@ -39,6 +45,21 @@ const Home = () => {
         </div>
       </header>
 
+      <div className="home_filtros" role="group" aria-label="Qué quieres ver">
+        {filtros.map((f) => (
+          <button
+            key={f.id}
+            type="button"
+            className={`home_pill ${filtro === f.id ? "home_pill_activo" : ""}`}
+            aria-pressed={filtro === f.id}
+            onClick={() => setFiltro(f.id)}
+          >
+            {f.texto}
+          </button>
+        ))}
+      </div>
+
+      {filtro !== "discos" && (
       <section className="timeline" aria-label="Nuestra historia">
         <article className="timeline_item reveal">
           <div className="timeline_text">
@@ -73,6 +94,26 @@ const Home = () => {
           <img className="timeline_media" src="https://res.cloudinary.com/drmbhl3f6/image/upload/v1722072728/Carlos_del_Soto_lirdgj.jpg" alt="Carlos del Soto, de ByeByePelos" loading="lazy" />
         </article>
       </section>
+      )}
+
+      {filtro !== "historia" && albums && albums.length > 0 && (
+        <section className="home_discos reveal" aria-label="Discos">
+          <div className="home_discos_cabecera">
+            <h2>Discos</h2>
+            <NavLink to="/music">Ver todos</NavLink>
+          </div>
+          <ul className="home_discos_lista">
+            {albums.map((album) => (
+              <li key={album._id}>
+                <NavLink to="/music" className="home_disco" onClick={() => setDisco(album)}>
+                  <img src={album.cover} alt="" loading="lazy" />
+                  <span>{album.title}</span>
+                </NavLink>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       <p className="footer">Esperamos que te guste y que disfrutes tanto como lo hicimos nosotros interpretándolos.</p>
       
