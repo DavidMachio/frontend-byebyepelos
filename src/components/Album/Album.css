@@ -25,7 +25,7 @@
     height: 200px;
     object-fit: cover;
     border-radius: 100%;
-    box-shadow: 0 0 10px black;
+    box-shadow: 0 0 10px var(--scrim-soft);
 }
 .album_title {
     font-size: 16px;

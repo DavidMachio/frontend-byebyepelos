@@ -1,5 +1,5 @@
 .musico{
-    background-color: rgb(39, 39, 39);
+    background-color: var(--surface-raised);
     padding: 10px;
     border-radius: 5px;
     display: flex;
@@ -12,7 +12,7 @@
     width: 50px;
     object-fit: cover;
     border-radius: 100%;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.463);
+    box-shadow: 0 0 5px var(--scrim-soft);
 }
 .infomusico{
     display: flex;
@@ -20,7 +20,7 @@
 }
 
 .infomusico h3{
-    color: rgb(255, 255, 255);
+    color: var(--ink);
 }
 
 @media (max-width:1050px){

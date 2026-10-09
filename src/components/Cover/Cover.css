@@ -4,7 +4,7 @@
     height: 330px;
     width: 100%;
     min-width: 200px;
-    background-color: black;
+    background-color: var(--surface-panel);
     overflow: hidden;
     backdrop-filter: 50px;
 }
@@ -22,7 +22,7 @@
     
     height: 250px;
     object-fit: cover;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.449);
+    box-shadow: 0 0 10px var(--scrim-soft);
     position: absolute;
     right: 30px;
     top: 10px;
@@ -38,6 +38,10 @@
     max-width: 400px;
     font-size: 50px;
     font-weight: 600;
-    text-shadow: 0 0 20px black;
+    text-shadow: 0 0 20px var(--scrim);
     line-height: 70px;
+}
+/* El texto va sobre la foto desenfocada: siempre claro, también en modo claro */
+#info-cover, #info-cover * {
+    color: #F5F9FC;
 }
