@@ -185,7 +185,7 @@
     gap: 10px;
   }
   .licancion {
-    background-color: var(--surface-hover);
+    background-color: var(--surface-base);
     box-shadow: 0 0 5px var(--scrim-soft);
     border-radius: 5px;
     display: flex;
