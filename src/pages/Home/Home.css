@@ -39,6 +39,82 @@
     color: #F5F9FC;
 }
 
+/* Filtros en píldora y carrusel de discos */
+.home_filtros {
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 var(--space-4);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+}
+.home_pill {
+    height: 40px;
+    padding: 0 22px;
+    border-radius: 20px;
+    background-color: transparent;
+    border: 1px solid var(--outline);
+    font-size: 15px;
+    cursor: pointer;
+}
+.home_pill:hover {
+    background-color: var(--surface-hover);
+}
+.home_pill_activo,
+.home_pill_activo:hover {
+    background-color: var(--accent);
+    border-color: var(--accent);
+    color: var(--on-accent);
+    font-weight: 500;
+}
+.home_pill:focus-visible,
+.home_disco:focus-visible {
+    outline: 2px solid var(--accent-ink);
+    outline-offset: 2px;
+}
+.home_discos {
+    width: 100%;
+    max-width: 1000px;
+    padding: 0 var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+.home_discos_cabecera {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+.home_discos_cabecera h2 {
+    font-size: 1.75rem;
+    font-weight: 300;
+}
+.home_discos_cabecera a {
+    color: var(--accent-ink);
+}
+.home_discos_lista {
+    display: flex;
+    gap: 28px;
+    overflow-x: auto;
+    padding-bottom: var(--space-2);
+}
+.home_disco {
+    width: 150px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-2);
+    text-align: center;
+    border-radius: var(--radius-md);
+}
+.home_disco img {
+    height: 150px;
+    width: 150px;
+    object-fit: cover;
+    border-radius: var(--radius-round);
+    box-shadow: 0 0 10px var(--scrim-soft);
+}
+
 /* Historia en línea de tiempo */
 .timeline {
     position: relative;
