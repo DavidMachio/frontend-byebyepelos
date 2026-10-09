@@ -8,7 +8,7 @@
 .AlbumCardEdit {
     width: 250px;
     height: 480px;
-    background-color: rgb(28, 28, 28);
+    background-color: var(--surface-raised);
     border-radius: 10px;
     padding: 10px;
     display: flex;
@@ -25,7 +25,7 @@
   position: sticky;
   height: 600px;
   width: 400px;
-  background-color: rgb(28, 28, 28);
+  background-color: var(--surface-raised);
   border-radius: 10px;
   padding: 10px;
   display: flex;
@@ -43,11 +43,14 @@
     width: 100px;
 }
 .AlbumCardEditform select{
-  color: black;
+  color: var(--ink);
+  background-color: var(--surface-base);
+  border: 1px solid var(--outline);
 }
 .AlbumCardEditform input{
-  color: black;
-  background-color: white;
+  color: var(--ink);
+  background-color: var(--surface-base);
+  border: 1px solid var(--outline);
 }
 .AlbumCardEditform {
   display: flex;
@@ -58,14 +61,14 @@
     padding: 5px;
     border-radius: 5px;
     background-color: transparent;
-    border: 1px solid white;
+    border: 1px solid var(--outline);
     cursor: pointer;
 
 }
 .botoneditar:hover {
-    background-color: green;
-    color: black;
-    border: 1px solid black;
+    background-color: var(--accent);
+    color: var(--on-accent);
+    border: 1px solid var(--accent);
 }
 .modal {
     position: fixed;
@@ -73,7 +76,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.763);
+    background: var(--scrim);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,7 +87,8 @@
   }
   
   .modal-content {
-    background-color: #4a4a4a;
+    background-color: var(--surface-raised);
+    border: 1px solid var(--accent-ink);
     padding: 20px;
     border-radius: 8px;
     width: 700px;
@@ -94,8 +98,8 @@
   }
   .modal-content h4 {
     padding: 10px;
-    background-color: rgb(255, 255, 255);
-    color: black;
+    background-color: var(--surface-hover);
+    color: var(--ink);
   }
   
   .close-btn {
@@ -103,11 +107,11 @@
     right: 50%;
     top: 50px;
     font-size: 20px;
-    background: white;
+    background: var(--ink);
     border: none;
     border-radius: 50%;
     cursor: pointer;
-    color: rgb(0, 0, 0);
+    color: var(--surface-base);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -125,7 +129,7 @@
   }
   .musicoañadido {
     display: flex;
-    background-color: grey;
+    background-color: var(--surface-hover);
     align-items: center;
     justify-content: space-between;
     padding: 5px;
@@ -139,7 +143,8 @@
     max-width: 200px;
   }
   .añadircanciones, .cancionesactuales {
-    color: black;
+    color: var(--ink);
+    background-color: var(--surface-hover);
     cursor: pointer;
     display: flex;
     justify-content: center;
@@ -147,23 +152,27 @@
     width: 150px;
     height: 30px;
     border-radius: 5px;
-    border: none;
+    border: 1px solid var(--outline);
     
   }
   .añadircancion {
     height: 30px;
     width: 60px;
-    border: none;
+    color: var(--ink);
+    background-color: var(--surface-hover);
+    border: 1px solid var(--outline);
     border-radius: 5px;
   }
   .añadircancion:hover{
-    background-color: green;
+    background-color: var(--accent);
+    color: var(--on-accent);
     cursor: pointer;
   }
   .eliminarcancion{
-    background-color: red;
+    background-color: transparent;
+    color: var(--status-critical);
     cursor: pointer;
-    border: none;
+    border: 1px solid var(--status-critical);
     height: 30px;
     width: 60px;
     border-radius: 5px;
@@ -176,8 +185,8 @@
     gap: 10px;
   }
   .licancion {
-    background-color: rgb(63, 63, 63);
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.463);
+    background-color: var(--surface-base);
+    box-shadow: 0 0 5px var(--scrim-soft);
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -189,7 +198,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: black;
+    color: var(--ink);
   }
   .cancion {
     display: flex;

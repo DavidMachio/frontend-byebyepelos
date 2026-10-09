@@ -1,3 +1,4 @@
+@import "./tokens.css";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
@@ -6,37 +7,36 @@
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
-    color: white;
+    color: var(--ink);
     font-weight: 300;
     text-decoration: none;
     list-style: none;
 }
 body {
-    background-color: black;
+    background-color: var(--surface-base);
 }
 
 /* Campos de formulario.
-   La regla `*` de arriba pone el texto en blanco en todo, también dentro de
-   los campos, que por defecto tienen fondo blanco: texto blanco sobre blanco.
-   Esta base les da texto negro y fondo blanco. Usa :where() para tener
-   especificidad cero, así cualquier estilo de componente (por ejemplo el
-   login oscuro) sigue ganando. Los archivos y los deslizadores se excluyen
+   La regla `*` de arriba pone el texto con el color de tinta en todo, también dentro de
+   los campos: sin esta base podría salir texto claro sobre fondo claro en modo
+   claro. Usa :where() para tener especificidad cero, así cualquier estilo de
+   componente sigue ganando. Los archivos y los deslizadores se excluyen
    porque tienen su propio aspecto. */
 :where(input:not([type="file"]):not([type="range"]), select, textarea) {
-    color: #000;
-    background-color: #fff;
+    color: var(--ink);
+    background-color: var(--surface-raised);
 }
 
 /* Opciones de los desplegables: heredan texto y fondo del propio select,
-   para que se lean igual en un select claro que en uno oscuro. */
+   para que se lean igual en modo oscuro y claro. */
 select option {
     color: inherit;
     background-color: inherit;
 }
 select option:disabled {
-    color: #757575;
+    color: var(--ink-muted);
 }
 select option:checked:not(:disabled) {
-    color: #fff;
-    background-color: #008000;
+    color: var(--on-accent);
+    background-color: var(--accent);
 }

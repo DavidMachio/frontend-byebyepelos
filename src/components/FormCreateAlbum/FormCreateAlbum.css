@@ -1,33 +1,34 @@
 .formalbumcreate{
   width: 600px;
   height: 600px;
-  background-color: rgb(61, 61, 61);
-  border: 2px solid green;
+  background-color: var(--surface-raised);
+  border: 2px solid var(--accent-ink);
   border-radius: 10px;
   padding: 20px;
   display: flex;
   flex-direction: column;
   gap: 10px;
   text-align: left;
-  color: black;
+  color: var(--ink);
 }
 .formalbumcreate input, .formalbumcreate select {
-  color: black;
+  color: var(--ink);
+  background-color: var(--surface-base);
+  border: 1px solid var(--outline);
 }
 .formalbumcreate select {
   width: 300px;
 }
 .cargadeimagen {
-  background-color: white;
+  background-color: var(--surface-base);
 }
 .formalbumcreate input:focus, .formalbumcreate select:focus {
-  border: 2px solid green;
+  border-color: var(--accent-ink);
   border-radius: 5px;
-  
-  outline: none; /* Opcional, para quitar el contorno predeterminado del navegador */
+  outline: 2px solid var(--accent-ink); /* foco visible para quien usa teclado */
 }
 .option {
-    color: black;
+    color: var(--ink);
 }
 .banner {
     padding: 10px;
@@ -38,13 +39,15 @@
   }
   
   .banner.loading {
-    background-color: #f0ad4e;
-    color: white;
+    background-color: var(--surface-base);
+    color: var(--status-high);
+    box-shadow: inset 0 0 0 1px currentColor;
   }
   
   .banner.success {
-    background-color: #5cb85c;
-    color: white;
+    background-color: var(--surface-base);
+    color: var(--status-ok);
+    box-shadow: inset 0 0 0 1px currentColor;
   }
   .removebutton {
     background-color: transparent;

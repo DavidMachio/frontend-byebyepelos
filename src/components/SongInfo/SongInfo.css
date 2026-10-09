@@ -17,14 +17,14 @@
 .songinfo_titulocancion{
     font-size: 20px;
     padding: 0 10px;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.519);
-    color: green;
+    text-shadow: 0 0 10px var(--scrim-soft);
+    color: var(--accent-ink);
 }
 .songinfo_vso {
     font-size: 16px;
     font-weight: 100;
     padding: 0 10px;
-    text-shadow: 0 0 10px rgba(0, 0, 0, 0.519);
+    text-shadow: 0 0 10px var(--scrim-soft);
 }
 
 .songinfo_portadacancion{
@@ -32,7 +32,7 @@
     width: 250px;
     aspect-ratio: 16/9;
     object-fit: cover;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.519);
+    box-shadow: 0 0 10px var(--scrim-soft);
 }
 
 .songinfo_controls_container{
@@ -76,19 +76,19 @@
     justify-content: center;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.443);
-    border: 2px solid green;
+    box-shadow: 0 0 10px var(--scrim-soft);
+    border: 2px solid var(--accent-ink);
 }
 .songinfo_prev_button, 
 .songinfo_next_button{
-    background-color: rgba(0, 0, 0, 0.216);
+    background-color: var(--veil);
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(255, 255, 255, 0.349);
+  border: 1px solid var(--outline);
     height: 45px;
 
 }
 .songinfo_play_button{
-    background-color: white;
+    background-color: var(--ink);
     height: 50px;
     border: none;
     cursor: pointer;
@@ -96,10 +96,11 @@
 }
 .img_button_play{
     height: 25px;
+    filter: var(--icon-filter-inverse);
 }
 .img_button_next, .img_button_back{
     height: 20px;
-    filter: invert(1);
+    filter: var(--icon-filter);
 }
 
 .songinfo_verinfo{
@@ -156,7 +157,7 @@
     
     
     .songinfo_cerrarinfo{
-        color: white;
+        color: var(--ink);
         background-color: transparent;
         display: flex;
         align-items: center;
@@ -181,7 +182,7 @@
         left: 0;
         right: 0;
         margin: auto;
-        background-color: rgba(0, 0, 0, 0.917);
+        background-color: var(--scrim);
         justify-content: center;
         
     }
@@ -196,16 +197,16 @@
     .songinfo_verinfo{
         display: inline;
         background-color: transparent;
-    border: 2px solid white;
+    border: 2px solid var(--ink);
     width: 100px;
     height: 30px;
     border-radius: 5px;
     cursor: pointer;
     transition: all .3s;
-    color: white;
+    color: var(--ink);
     }
     .songinfo_verinfo:hover{
-color: black;        background-color: white;
+color: var(--surface-base);        background-color: var(--ink);
     }
     
 }

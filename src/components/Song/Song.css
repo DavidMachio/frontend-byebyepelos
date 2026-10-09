@@ -12,7 +12,7 @@
     cursor: pointer;
 }
 #song:hover {
-    background-color: rgb(50, 50, 50);
+    background-color: var(--surface-hover);
     border: none;
     border-radius: 10px;
 }
@@ -47,7 +47,7 @@
 
 .addsongList {
     background-color: transparent;
-    border: 1px solid;
+    border: 1px solid var(--outline);
     height: 20px;
     width: 20px;
     border-radius: 100%;
@@ -63,7 +63,8 @@
 
 }
 .addsongList:hover {
-    background-color: green;
+    background-color: var(--accent);
+    color: var(--on-accent);
 }
 .divlevels{
     position: absolute;
@@ -74,7 +75,7 @@
     font-weight: 100;
 }
 .reproduciendo{
-    background-color: rgb(20, 36, 20);
+    background-color: var(--surface-playing);
 }
 
 @media (max-width:550px){

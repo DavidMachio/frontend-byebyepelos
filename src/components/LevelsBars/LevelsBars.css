@@ -8,7 +8,7 @@
 .bar {
     width: 5px;
     border-radius: 2px;
-    background-color: green;
+    background-color: var(--accent-ink);
 }
 .oculto{
     display: none;

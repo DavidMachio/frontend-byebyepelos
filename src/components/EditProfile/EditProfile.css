@@ -3,8 +3,9 @@
     max-width: 400px;
     margin: 0 auto;
     padding: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--surface-line);
     border-radius: 8px;
+    background-color: var(--surface-raised);
   }
   
   .form-group {
@@ -21,7 +22,7 @@
   input[type="file"] {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--outline);
     border-radius: 4px;
   }
   
@@ -38,8 +39,8 @@
   }
   
   .btn-save {
-    background-color: #4CAF50;
-    color: white;
+    background-color: var(--accent);
+    color: var(--on-accent);
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
@@ -47,11 +48,11 @@
   }
   
   .btn-save:hover {
-    background-color: #45a049;
+    background-color: var(--accent-hover);
   }
   
   .error-message {
-    color: red;
+    color: var(--status-critical);
     font-size: 0.9em;
   }
   

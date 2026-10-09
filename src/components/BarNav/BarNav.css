@@ -1,11 +1,11 @@
 .active{
     text-decoration: underline;
-    color: green;
+    color: var(--accent-ink);
 }
 #bar-nav {
     height: 60px;
     width: 100%;
-    background-color: rgb(21, 21, 21);
+    background-color: var(--surface-panel);
     display: flex;
     align-items: center;
     justify-content: flex-end;
@@ -20,15 +20,15 @@
     width: 40px;
     border-radius: 50%;
     font-size: 30px;
-    border: 2px solid rgb(128, 0, 0);
+    border: 2px solid var(--status-critical);
 
     padding: 3px;
 }
 .default {
-    background-color: blanchedalmond;
+    background-color: var(--highlight);
 }
 .border{
-    border: 2px solid green;
+    border: 2px solid var(--accent-ink);
 }
 #bar-nav img {
     height: 100%;

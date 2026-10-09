@@ -19,7 +19,7 @@
     min-width: 300px;
     border-radius: 10px;
     overflow-y: scroll;
-    background-color: rgb(18, 18, 18);
+    background-color: var(--surface-panel);
 
 }
 
@@ -29,7 +29,7 @@
     min-height: 200px;
     width: 350px;
     min-width: 250px;
-    background-color: rgb(18, 18, 18);
+    background-color: var(--surface-panel);
     border-radius: 10px;
     overflow-y: scroll;
     padding-bottom: 10px;
@@ -54,7 +54,7 @@
     width: 100%;
     min-width: 200px;
     max-width: 100%;
-    background-color: rgb(17, 17, 17);
+    background-color: var(--surface-panel);
     border-radius: 10px;
     padding-bottom: 30px;
 }
@@ -93,8 +93,8 @@
     height: 100%;    /* Ajusta el tamaño como sea necesario */
     z-index: 500;    /* Mantenemos el z-index */
     padding: 20px;   /* Puedes ajustar el padding si es necesario */
-    background-color: rgba(0, 0, 0, 0.853); /* Asegúrate de que tenga un fondo visible */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Añadimos sombra para resaltar */
+    background-color: var(--scrim); /* Asegúrate de que tenga un fondo visible */
+    box-shadow: 0 4px 10px var(--scrim-soft); /* Añadimos sombra para resaltar */
     border-radius: 8px; /* Bordes redondeados opcionales */
     display: flex;
     align-items: center;
