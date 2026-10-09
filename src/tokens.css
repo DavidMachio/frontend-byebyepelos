@@ -1,0 +1,95 @@
+/*
+  ByeByePelos · variables de diseño (paleta Tissimo)
+  Fuente: sistema-de-diseno-cliente.html del proyecto.
+  - Modo oscuro por defecto.
+  - Modo claro automático si el dispositivo lo pide (prefers-color-scheme).
+  - Se puede forzar con <html data-theme="light"> o <html data-theme="dark">.
+  Para desactivar el modo claro automático: borrar el bloque @media de abajo.
+*/
+
+:root {
+  /* Superficies */
+  --surface-base: #1B242E;
+  --surface-panel: #202B37;
+  --surface-raised: #243442;
+  --surface-hover: #2E3F50;
+  --surface-line: #3D5162;
+  --surface-playing: #24404B;
+
+  /* Texto y bordes */
+  --ink: #F5F9FC;
+  --ink-muted: #A9B5C9;
+  --outline: #8999B4;
+
+  /* Marca */
+  --accent: #57DBED;
+  --accent-hover: #63E0F1;
+  --accent-pressed: #46C2D5;
+  --on-accent: #1B242E;
+  --accent-ink: #57DBED;
+  --highlight: #FAE7B4;
+
+  /* Estados (siempre acompañados de su palabra) */
+  --status-critical: #FF6B6B;
+  --status-high: #FF9F43;
+  --status-medium: #FAE7B4;
+  --status-low: #9FB3EA;
+  --status-ok: #5ED08A;
+
+  /* Capas */
+  --scrim: rgba(11, 16, 22, 0.85);
+  --scrim-soft: rgba(11, 16, 22, 0.45);
+  --veil: rgba(245, 249, 252, 0.25);
+
+  /* Espaciado y esquinas */
+  --space-1: 5px;
+  --space-2: 10px;
+  --space-3: 15px;
+  --space-4: 20px;
+  --space-5: 40px;
+  --radius-sm: 5px;
+  --radius-md: 10px;
+  --radius-round: 50%;
+}
+
+:root[data-theme="light"] {
+  --surface-base: #F5F9FC;
+  --surface-panel: #FFFFFF;
+  --surface-raised: #FFFFFF;
+  --surface-hover: #E9EDF1;
+  --surface-line: #D5DBE4;
+  --surface-playing: #E2F9FC;
+  --ink: #1B242E;
+  --ink-muted: #435062;
+  --outline: #7588A7;
+  --accent-hover: #4CCEE2;
+  --accent-pressed: #3BB5C9;
+  --accent-ink: #00778A;
+  --status-critical: #B42318;
+  --status-high: #B54708;
+  --status-medium: #8A6100;
+  --status-low: #3B4F8A;
+  --status-ok: #1E7B3E;
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --surface-base: #F5F9FC;
+    --surface-panel: #FFFFFF;
+    --surface-raised: #FFFFFF;
+    --surface-hover: #E9EDF1;
+    --surface-line: #D5DBE4;
+    --surface-playing: #E2F9FC;
+    --ink: #1B242E;
+    --ink-muted: #435062;
+    --outline: #7588A7;
+    --accent-hover: #4CCEE2;
+    --accent-pressed: #3BB5C9;
+    --accent-ink: #00778A;
+    --status-critical: #B42318;
+    --status-high: #B54708;
+    --status-medium: #8A6100;
+    --status-low: #3B4F8A;
+    --status-ok: #1E7B3E;
+  }
+}

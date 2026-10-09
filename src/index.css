@@ -1,3 +1,4 @@
+@import "./tokens.css";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
@@ -15,28 +16,39 @@ body {
     background-color: black;
 }
 
+/* Texto de los contenedores de la Fase 1 (formularios y ventanas modales).
+   La regla `*` de arriba pone `color: white` directamente en cada elemento,
+   así que el color no se hereda: hay que decirlo para los descendientes.
+   Con :where() la especificidad es cero y cualquier estilo de componente
+   (un error en rojo, un botón con texto oscuro...) sigue ganando.
+   Las fases 2 y 3 ampliarán esta lista. */
+:where(.mainlogin, .mainregister, .formEditUser, .formalbumcreate, .formcreatesong,
+       .AlbumCardEdit, .AlbumCardEditform, .SongCardEdit, .SongCardEditform,
+       .songAdded_div, .modal, .profile_container_edit) :where(*) {
+    color: var(--ink);
+}
+
 /* Campos de formulario.
    La regla `*` de arriba pone el texto en blanco en todo, también dentro de
-   los campos, que por defecto tienen fondo blanco: texto blanco sobre blanco.
-   Esta base les da texto negro y fondo blanco. Usa :where() para tener
-   especificidad cero, así cualquier estilo de componente (por ejemplo el
-   login oscuro) sigue ganando. Los archivos y los deslizadores se excluyen
+   los campos: sin esta base saldría texto claro sobre fondo claro en modo
+   claro. Usa :where() para tener especificidad cero, así cualquier estilo de
+   componente sigue ganando. Los archivos y los deslizadores se excluyen
    porque tienen su propio aspecto. */
 :where(input:not([type="file"]):not([type="range"]), select, textarea) {
-    color: #000;
-    background-color: #fff;
+    color: var(--ink);
+    background-color: var(--surface-raised);
 }
 
 /* Opciones de los desplegables: heredan texto y fondo del propio select,
-   para que se lean igual en un select claro que en uno oscuro. */
+   para que se lean igual en modo oscuro y claro. */
 select option {
     color: inherit;
     background-color: inherit;
 }
 select option:disabled {
-    color: #757575;
+    color: var(--ink-muted);
 }
 select option:checked:not(:disabled) {
-    color: #fff;
-    background-color: #008000;
+    color: var(--on-accent);
+    background-color: var(--accent);
 }
