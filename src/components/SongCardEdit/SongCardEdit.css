@@ -64,3 +64,16 @@
   .musician-list div {
     margin-bottom: 8px;
   }
+@media (max-width:550px){
+    .SongCardEdit{
+        font-size: 13px;
+    }
+    /* la regla global `*` fija el peso 300 en cada elemento, por eso se aplica a los hijos */
+    .SongCardEdit *{
+        font-weight: 500;
+    }
+    .SongCardEdit h4{
+        font-size: 16px;
+        font-weight: 600;
+    }
+}

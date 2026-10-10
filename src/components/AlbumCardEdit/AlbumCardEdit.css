@@ -214,3 +214,17 @@
   .cancion p {
     font-size: 16px;
   }
+@media (max-width:550px){
+    .AlbumCardEdit,
+    .AlbumCardEditform{
+        font-size: 13px;
+    }
+    .AlbumCardEdit *,
+    .AlbumCardEditform *{
+        font-weight: 500;
+    }
+    .AlbumCardEdit h4{
+        font-size: 16px;
+        font-weight: 600;
+    }
+}

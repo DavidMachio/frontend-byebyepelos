@@ -292,6 +292,12 @@
     margin-right: 20px;
 }
 @media (max-width:550px){
+    .home_disco{
+        font-size: 0.9375rem;
+    }
+    .home_disco span{
+        font-weight: 500;
+    }
     .cancionActual{
         height: 50px;
         left: 8px;
