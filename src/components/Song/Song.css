@@ -80,9 +80,13 @@
 
 @media (max-width:550px){
     #song h2, h3 {
-        font-size: 12px;
-        font-weight: 100;
+        font-size: 14px;
+        font-weight: 500;
         
+    }
+    .song_vsosong{
+        font-size: 13px;
+        font-weight: 400;
     }
     .song_number, .duration{
         display: none;
