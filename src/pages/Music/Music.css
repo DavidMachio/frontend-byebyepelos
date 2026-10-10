@@ -109,11 +109,12 @@
 @media (min-width:1051px){
     #albums-container{
         width: 400px;
+        flex: none;
     }
     #albums-container ul {
         display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 8px;
         padding: 0 10px 10px;
         justify-items: stretch;
         align-items: stretch;

@@ -59,24 +59,27 @@
 }
 
 @media (min-width:1051px){
-    /* Tarjeta horizontal: portada pequeña a la izquierda y título a la derecha */
+    /* Fila: portada cuadrada con esquinas redondeadas a la izquierda y título a la derecha */
     .album-container{
         width: 100%;
         flex-direction: row;
+        align-items: center;
         justify-content: flex-start;
-        gap: 12px;
-        padding: 8px 10px 8px 8px;
+        gap: 14px;
+        padding: 8px;
         text-align: left;
     }
     .portada_del_album{
-        width: 52px;
-        height: 52px;
+        width: 64px;
+        height: 64px;
         flex: none;
+        border-radius: 12px;
+        box-shadow: none;
     }
     .album_title{
         font-size: 14px;
+        font-weight: 300;
         text-align: left;
         line-height: 1.25;
-        overflow-wrap: anywhere;
     }
 }
