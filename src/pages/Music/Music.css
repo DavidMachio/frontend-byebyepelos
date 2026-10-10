@@ -121,7 +121,7 @@
     #albums-container .liAlbum {
         width: 100%;
         border-radius: 10px;
-        background-color: var(--surface-raised);
+        background-color: transparent;
         border: 1px solid transparent;
     }
     #albums-container .liAlbum:hover {
