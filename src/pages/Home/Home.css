@@ -94,7 +94,7 @@
 }
 .home_discos_lista {
     display: flex;
-    gap: 28px;
+    gap: 20px;
     overflow-x: auto;
     padding-bottom: var(--space-2);
 }
@@ -102,17 +102,18 @@
     width: 150px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--space-2);
-    text-align: center;
+    text-align: left;
     border-radius: var(--radius-md);
+    font-size: 0.8125rem;
+    font-weight: 300;
 }
 .home_disco img {
     height: 150px;
     width: 150px;
     object-fit: cover;
-    border-radius: var(--radius-round);
-    box-shadow: 0 0 10px var(--scrim-soft);
+    border-radius: 16px;
 }
 
 /* Historia en línea de tiempo */
