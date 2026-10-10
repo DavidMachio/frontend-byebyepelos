@@ -11,7 +11,7 @@
     height: 50px;
     width: 50px;
     object-fit: cover;
-    border-radius: 100%;
+    border-radius: 8px;
     box-shadow: 0 0 5px var(--scrim-soft);
 }
 .infomusico{
