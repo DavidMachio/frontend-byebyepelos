@@ -107,23 +107,29 @@
 
 /* Álbumes en cuadrícula de 2 columnas en escritorio; en ≤1050 px sigue el carrusel */
 @media (min-width:1051px){
+    #albums-container{
+        width: 400px;
+    }
     #albums-container ul {
         display: grid;
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 20px 10px;
+        gap: 10px;
         padding: 0 10px 10px;
-        justify-items: center;
+        justify-items: stretch;
+        align-items: stretch;
     }
     #albums-container .liAlbum {
         width: 100%;
         border-radius: 10px;
+        background-color: var(--surface-raised);
+        border: 1px solid transparent;
     }
     #albums-container .liAlbum:hover {
         background-color: var(--surface-hover);
     }
     #albums-container .liAlbum_activo {
         background-color: var(--surface-playing);
-        outline: 1px solid var(--accent-ink);
+        border-color: var(--accent-ink);
     }
 }
 
