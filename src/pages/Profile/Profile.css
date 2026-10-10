@@ -59,6 +59,8 @@
     padding-top: 110px;
     width: 100%;
     min-height: 340px;
+    /* No encoger dentro de la columna: si no, el contenido se sale y tapa la lista */
+    flex: none;
 }
 .profile_avatar {
     height: 200px;
