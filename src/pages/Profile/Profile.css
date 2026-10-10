@@ -65,7 +65,7 @@
 .profile_avatar {
     height: 200px;
     width: 200px;
-    border-radius: 100%;
+    border-radius: 20px;
     object-fit: cover;
     border: 4px solid var(--surface-base);
     flex: none;
